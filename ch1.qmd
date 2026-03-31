@@ -1,0 +1,95 @@
+::::::::::::::::::: {#ch1 .section .chapter}
+::: chapter-num
+Chapter 1
+:::
+
+# The Sovereign Imperative {#the-sovereign-imperative .chapter-title}
+
+The geopolitical moment has arrived. Sovereign cloud is no longer a philosophical preference --- it is a regulatory requirement, a national security posture, and an economic necessity.
+
+## The World Has Changed
+
+For most of the 2010s, \"cloud\" meant AWS or Azure. Cheap, scalable, globally available. The tradeoffs --- data crossing borders, dollar-denominated costs, dependence on foreign infrastructure --- felt abstract. They no longer do.
+
+The Russia-Ukraine war demonstrated that global payment rails can be severed overnight. US-China tariff escalations showed that technology supply chains are weaponisable. India\'s own experience with data localisation debates, the Aadhaar controversy, and NPCI\'s insistence on data sovereignty have all pointed in one direction: **critical national infrastructure must be controlled nationally.**
+
+::::::::: {.cards .cards-3}
+:::: card
+::: card-icon
+🌍
+:::
+
+### Geopolitical Volatility
+
+Russia-Ukraine, Iran tensions, and US-China decoupling have made dependency on foreign cloud a sovereign risk --- not just a technical one.
+::::
+
+:::: {.card .accent-gold}
+::: card-icon
+⚖️
+:::
+
+### Regulatory Pressure
+
+RBI, NPCI, and MeitY are each moving --- independently and simultaneously --- toward mandating data residency and sovereign hosting for critical financial data.
+::::
+
+:::: {.card .accent-green}
+::: card-icon
+💱
+:::
+
+### FX Economics
+
+Dollar-denominated cloud bills have not followed Moore\'s Law. Banks earning in INR face 15--30% cost inflation purely from currency exposure.
+::::
+:::::::::
+
+## MeitY\'s March 2026 Directive
+
+In a March 2026 office memorandum titled *Guidelines for Cloud Selection Framework*, the Ministry of Electronics and Information Technology directed all ministries and departments to classify their data into three categories before selecting any cloud service:
+
+:::: {.callout .callout-warn}
+::: callout-title
+🔴 Top Secret / Secret
+:::
+
+Strictly not permitted to be hosted on commercial cloud platforms at all. Must remain on sovereign, air-gapped infrastructure.
+::::
+
+:::: {.callout .callout-note}
+::: callout-title
+🟡 Category A --- Sensitive National Data
+:::
+
+Includes Aadhaar, PAN, e-Courts, UPI data, passport records, railways, tax systems, voter ID (central); land records, revenue courts, treasury (state). Must be hosted on government cloud services or sovereign-certified providers. **No commercial hyperscalers.**
+::::
+
+:::: {.callout .callout-key}
+::: callout-title
+🟢 Category B --- Official Use Data
+:::
+
+RTI-disclosable data, welfare scheme data, public grievances. May be hosted on central/state cloud services or MeitY-notified sovereign providers.
+::::
+
+The implication for banks is unambiguous: UPI transaction data, card data, Aadhaar-linked KYC --- everything that makes modern banking work --- **cannot legally sit on AWS, GCP, or Azure.** The only compliant path is a sovereign cloud certified by MeitY, or an on-premise infrastructure operated in India.
+
+## India\'s RBI Position
+
+The Reserve Bank of India has long maintained that payment system data must be stored exclusively in India. The 2018 circular on Payment System Data Storage made this explicit for UPI and card networks. The 2023 Master Directions on Outsourcing extended this to cloud service providers, requiring banks to ensure data sovereignty, right to audit, and exit clauses.
+
+:::: {.callout .callout-tip}
+::: callout-title
+💡 The Compliance Trap
+:::
+
+Banks are caught in a bind: modern cloud-native architecture requires hyperscalers, but RBI mandates on-premise or sovereign hosting. Legacy on-prem is too brittle for modern workloads. The only escape is a sovereign cloud that is actually cloud-native --- which is exactly what Namma Cloud is.
+::::
+
+## The Window Is Narrow
+
+Banks that move to sovereign cloud in the next 18--24 months will build on modern, AI-powered infrastructure that gives them a 10-year cost and capability advantage. Banks that wait will face forced migrations under regulatory pressure, with less choice, less time, and higher risk.
+
+The sovereign moment is here. The question is not *whether* to move, but *with whom*.
+:::::::::::::::::::

@@ -1,0 +1,125 @@
+:::::::::::::::::::::::::::::::: {#ch10 .section .chapter}
+::: chapter-num
+Chapter 10
+:::
+
+# The Migration Path {#the-migration-path .chapter-title}
+
+Moving critical banking infrastructure is one of the highest-stakes projects a bank can undertake. Namma Cloud\'s migration approach is designed around one principle: zero disruption to production banking operations.
+
+## The Strangler Fig Strategy
+
+The strangler fig tree grows around its host, gradually taking its place --- but never disrupting it. Namma Cloud\'s migration strategy follows the same pattern: grow the new system around the old one, validate at every step, and replace components only when the replacement is proven.
+
+This is not a big-bang migration. It is a systematic, phase-by-phase transition where the bank retains full operational capability throughout.
+
+:::::::::::::::::::::::::::: phases
+::::::: phase
+::: phase-num
+01
+:::
+
+::::: phase-body
+::: phase-title
+Foundation
+:::
+
+::: phase-dur
+Months 1--3
+:::
+
+Physical DC setup, Namma DSL baseline declaration, network and storage commissioning. Zero-touch provisioning. OpenBao secret management deployed. InfraSwitch connected to the new environment. No production traffic moved yet.
+:::::
+:::::::
+
+::::::: phase
+::: phase-num
+02
+:::
+
+::::: phase-body
+::: phase-title
+Observability Layer
+:::
+
+::: phase-dur
+Months 2--5 (overlapping)
+:::
+
+Namma Observe deployed to monitor both the existing infrastructure and the new Namma Cloud environment. Anomaly detection baselines established. Alert consolidation --- one Slack channel, one mobile app, one dashboard. Shadow mode: Namma Cloud receives traffic but does not process it yet.
+:::::
+:::::::
+
+::::::: phase
+::: phase-num
+03
+:::
+
+::::: phase-body
+::: phase-title
+Non-Critical Workload Migration
+:::
+
+::: phase-dur
+Months 4--8
+:::
+
+Non-critical workloads --- analytics, batch processing, reporting, internal tools --- migrated first. Autopilot blue-green deployments. Styrofoam validates cost projections against actuals. Team builds operational muscle before touching production payments.
+:::::
+:::::::
+
+::::::: phase
+::: phase-num
+04
+:::
+
+::::: phase-body
+::: phase-title
+Payment Stack Migration
+:::
+
+::: phase-dur
+Months 8--12
+:::
+
+UPI, cards, and netbanking workloads migrated with parallel-run strategy. Namma Cloud receives shadow traffic, results compared in real time. Staggered cutover: 5% → 25% → 50% → 100% with A/B statistical validation at each stage. Rollback available at any point.
+:::::
+:::::::
+
+::::::: phase
+::: phase-num
+05
+:::
+
+::::: phase-body
+::: phase-title
+Full Sovereignty
+:::
+
+::: phase-dur
+Months 12--18
+:::
+
+Complete exit from commercial hyperscalers. All data on Indian sovereign infrastructure. Single pane of glass for all operations. Namma DB tiering in production. Full Juspay product integration live. Hyperscaler contracts terminated.
+:::::
+:::::::
+::::::::::::::::::::::::::::
+
+## What the Bank Provides
+
+Namma Cloud is a managed offering. The bank\'s team does not need to become experts in Ceph, OpenStack, or Kubernetes internals. Here is what the bank brings to the partnership:
+
+-   Executive sponsorship and a dedicated migration programme manager
+-   Access to current infrastructure configurations and runbooks
+-   Network connectivity between existing and new environments during parallel running
+-   Business sign-off on cutover windows for each workload
+-   Regulatory liaison for any approvals required from RBI/NPCI
+
+:::: {.callout .callout-key}
+::: callout-title
+✅ Juspay\'s Commitment
+:::
+
+Juspay provides the full stack: hardware procurement and commissioning, Namma DSL declaration, network design, OpenStack/Ceph/Kubernetes deployment, migration tooling, parallel-run monitoring, cutover execution, and ongoing operations support. The bank\'s engineers are observers and approvers --- not implementors.
+::::
+::::::::::::::::::::::::::::::::

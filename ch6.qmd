@@ -1,0 +1,179 @@
+::::::::::::::::::::::::::::::::::::::::::::: {#ch6 .section .chapter}
+::: chapter-num
+Chapter 6
+:::
+
+# Reliability by Design {#reliability-by-design .chapter-title}
+
+99.999% availability is not an aspiration at Juspay --- it is an engineering requirement. Every architectural decision in Namma Cloud is made through the lens of: \"What happens when this fails?\"
+
+## The Ten Tenets
+
+Juspay\'s Reliability Principles are not a marketing document. They are the operating philosophy that governs every infrastructure decision, every deployment, and every incident response.
+
+::::::::::::::::::::::::::::::::: principles
+::::: principle
+<div>
+
+::: principle-title
+Abundant Redundancy, Active-Active, Instant Failover
+:::
+
+No single point of failure at any layer. Every critical component has a symmetric redundant counterpart, actively processing requests. Failover is instant and automatic.
+
+</div>
+:::::
+
+::::: principle
+<div>
+
+::: principle-title
+Critical Path --- 100X Strong, Utterly Simple
+:::
+
+The critical path (payment processing, UPI routing, authentication) must be impossibly simple and impossibly strong. Complexity is the enemy of reliability.
+
+</div>
+:::::
+
+::::: principle
+<div>
+
+::: principle-title
+Reduce Blast Radius
+:::
+
+Failures should be contained. Merchant-level sharding, namespace-level isolation, circuit breakers between services --- every boundary limits the damage of any single failure.
+
+</div>
+:::::
+
+::::: principle
+<div>
+
+::: principle-title
+Auto Anomaly Detection, Auto RCA
+:::
+
+Failures should be detected and diagnosed before humans are paged. Shifu and Shifu-2.0 provide millisecond anomaly detection and automated root cause analysis.
+
+</div>
+:::::
+
+::::: principle
+<div>
+
+::: principle-title
+Dynamic Model-Based Capacity Allocation
+:::
+
+Capacity must be allocated based on traffic models, not historical averages. Styrofoam ensures zero bottlenecks by predicting demand and provisioning ahead of it.
+
+</div>
+:::::
+
+::::: principle
+<div>
+
+::: principle-title
+Mandatory Staggering, A/B Testing & Rollback for All Changes
+:::
+
+No change --- code, config, or infrastructure --- goes directly to 100% of traffic. Every change is staggered, monitored, and ready to roll back in seconds.
+
+</div>
+:::::
+
+::::: principle
+<div>
+
+::: principle-title
+Testing the Limits --- Load, Failure, Chaos Tests in Production
+:::
+
+We chaos test in production. Load tests validate scale claims. Failure injection tests validate failover assumptions. We test limits before customers find them.
+
+</div>
+:::::
+
+::::: principle
+<div>
+
+::: principle-title
+RCA/CoE Process Done with Rigour
+:::
+
+Every incident is a Root Cause Analysis. Every RCA is a Culture of Excellence opportunity. No incident is closed without a systemic fix in the critical path.
+
+</div>
+:::::
+
+::::: principle
+<div>
+
+::: principle-title
+Set Ambitious SLAs/SLOs --- Constantly Improve
+:::
+
+99.999% is not a target we declare on slides. It is an SLO we measure in dashboards, review in post-mortems, and improve every quarter.
+
+</div>
+:::::
+
+::::: principle
+<div>
+
+::: principle-title
+Org-Wide Collective Ownership
+:::
+
+Reliability is not the SRE team\'s problem. It is every engineer\'s problem, every product manager\'s problem, every CXO\'s problem. The culture reinforces it daily.
+
+</div>
+:::::
+:::::::::::::::::::::::::::::::::
+
+## The Yin and Yang of Reliability
+
+Juspay\'s reliability philosophy recognises a fundamental tension in distributed systems: the same properties that make a system flexible and scalable (decentralisation, diversity, complexity) are the properties that make it fragile. Reliability requires holding both sides simultaneously.
+
+::::: {.cards .cards-2}
+::: {.card .accent-navy}
+### ⚫ Critical Path (Yin)
+
+Unified · Centralised · Simple · Stable · Certain · Very Strong. The critical path --- failover switches, load balancers, rate limiters, authentication --- must be narrow, strong, and never fail.
+:::
+
+::: card
+### ⚪ Abundance Side (Yang)
+
+Diversity · Redundancy · Distribution · Decentralisation · Complexity · Possibility. The system\'s resilience comes from abundant redundancy outside the critical path.
+:::
+:::::
+
+:::: {.callout .callout-tip}
+::: callout-title
+💡 The Golden Rule
+:::
+
+Every RCA must ask: \"Why did the critical path not catch this?\" If the CP caught it, it was handled. If it didn\'t, the CP needs to be strengthened. This recursive improvement loop is why Juspay\'s uptime keeps improving.
+::::
+
+::::::: stats-row
+::: stat-block
+[99.999%]{.big} [Target Uptime SLA]{.small}
+:::
+
+::: stat-block
+[\<100ms]{.big} [Transaction Latency]{.small}
+:::
+
+::: stat-block
+[50,000+]{.big} [TPS Tested Capacity]{.small}
+:::
+
+::: stat-block
+[0%]{.big} [Technical Declines]{.small}
+:::
+:::::::
+:::::::::::::::::::::::::::::::::::::::::::::

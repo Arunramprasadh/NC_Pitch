@@ -1,0 +1,102 @@
+:::::::::::::::::::::::: {#ch2 .section .chapter}
+::: chapter-num
+Chapter 2
+:::
+
+# The Bank\'s Infrastructure Crisis {#the-banks-infrastructure-crisis .chapter-title}
+
+Most banks in India are running critical workloads on infrastructure that was never designed for the transaction volumes, regulatory requirements, or operational models of 2026. This is not a technical problem. It is an existential one.
+
+## Six Interlocking Failures
+
+The infrastructure crisis facing Indian banks is not one problem --- it is six problems that reinforce each other. Fixing one in isolation does not help. The only solution is a complete rethink.
+
+::::::::::::::::::::: principles
+::::: principle
+<div>
+
+::: principle-title
+The Compliance Trap
+:::
+
+Banks are caught between RBI\'s on-premise data localisation mandate and the operational reality that legacy on-prem systems cannot handle modern UPI volumes, latency requirements, or availability targets. Public cloud is non-compliant. Legacy on-prem is non-performant. There is no middle ground --- until now.
+
+</div>
+:::::
+
+::::: principle
+<div>
+
+::: principle-title
+Infrastructure Debt
+:::
+
+Decades of patchwork on-premise infrastructure --- heterogeneous hardware, undocumented configurations, single points of failure, manual provisioning --- means that the average Indian bank cannot scale its infrastructure in under a week. During salary season, festival periods, or tax filing deadlines, this becomes a crisis every single year.
+
+</div>
+:::::
+
+::::: principle
+<div>
+
+::: principle-title
+The Cost Spiral
+:::
+
+Dollar-denominated AWS and GCP bills consume an increasingly large share of IT budgets. Cloud costs have not followed Moore\'s Law --- in fact, as workloads grow and FX moves against the rupee, per-transaction infrastructure costs are rising. Meanwhile, wastage rates of 30--40% are common because capacity planning is done manually and conservatively.
+
+</div>
+:::::
+
+::::: principle
+<div>
+
+::: principle-title
+The Operations Burden
+:::
+
+Hundreds of engineers in every large bank spend their days managing infrastructure instead of building banking products. There is no single pane of glass. A typical bank runs 10+ tools to operate a single Kubernetes cluster. Deployments are weekly batch events, not continuous. Every release carries risk.
+
+</div>
+:::::
+
+::::: principle
+<div>
+
+::: principle-title
+Zero Observability
+:::
+
+Most banks find out about infrastructure failures from customer complaints, not from their own monitoring. There is no unified alert system, no predictive anomaly detection, no capacity forecasting. Every salary day, every GST filing deadline, every IPO subscription window is a gamble.
+
+</div>
+:::::
+
+::::: principle
+<div>
+
+::: principle-title
+Vendor Lock-in
+:::
+
+Proprietary managed services from hyperscalers --- RDS, DynamoDB, CloudWatch, Lambda --- make migration prohibitively expensive. Every bank that chose the \"easy\" path of managed services 5 years ago is now paying the hyperscaler tax with no exit. The managed services they depend on are Category-A data violations waiting to happen.
+
+</div>
+:::::
+:::::::::::::::::::::
+
+::: pull-quote
+\"Every one of these six failures has a single root cause: there is no trusted, sovereign, full-stack cloud built for Indian banking. Until now.\"
+:::
+
+## What Banks Actually Need
+
+  Requirement                 Today (Hyperscaler / Legacy)                       Namma Cloud
+  --------------------------- -------------------------------------------------- ----------------------------------------------------
+  RBI Data Localisation       [✗]{.cross} Hyperscalers non-compliant             [✓]{.tick} On Indian soil, always
+  Auto-scaling for peaks      [✗]{.cross} Manual on legacy; expensive on cloud   [✓]{.tick} Predictive, automated, INR-priced
+  99.999% uptime              [✗]{.cross} Single-region, manual failover         [✓]{.tick} Active-active, auto-failover
+  Zero-downtime deployments   [✗]{.cross} Weekly batch, high-risk releases       [✓]{.tick} Automated blue-green, A/B tested
+  Cost visibility & control   [✗]{.cross} Opaque hyperscaler billing             [✓]{.tick} Per-merchant, per-service cost tracking
+  UPI / Cards integration     [✗]{.cross} Custom integration required            [✓]{.tick} Pre-integrated, certified
+::::::::::::::::::::::::

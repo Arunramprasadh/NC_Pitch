@@ -1,0 +1,1818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Namma Cloud — India's Sovereign Banking Infrastructure</title>
+<style>
+/* ── Reset & Base ─────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy:        #0D2137;
+  --navy-mid:    #1E4D7B;
+  --navy-light:  #2B6CB0;
+  --saffron:     #E8772E;
+  --saffron-lt:  #F4A261;
+  --white:       #FFFFFF;
+  --off-white:   #F8FAFC;
+  --slate:       #64748B;
+  --slate-lt:    #CBD5E1;
+  --slate-dark:  #334155;
+  --green:       #10B981;
+  --gold:        #F59E0B;
+  --red:         #EF4444;
+  --sidebar-w:   300px;
+  --content-max: 820px;
+  --font-body:   'Georgia', 'Times New Roman', serif;
+  --font-sans:   -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono:   'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--slate-dark);
+  background: var(--off-white);
+  display: flex;
+}
+
+/* ── Sidebar ──────────────────────────────────────────── */
+#sidebar {
+  width: var(--sidebar-w);
+  min-height: 100vh;
+  background: var(--navy);
+  position: fixed;
+  top: 0; left: 0;
+  overflow-y: auto;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header {
+  padding: 28px 24px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.sidebar-logo {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--saffron-lt);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.sidebar-title {
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--white);
+  line-height: 1.3;
+}
+
+.sidebar-subtitle {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--slate-lt);
+  margin-top: 6px;
+}
+
+.sidebar-nav { padding: 16px 0 32px; flex: 1; }
+
+.nav-section-label {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  padding: 12px 24px 4px;
+}
+
+.nav-item {
+  display: block;
+  padding: 8px 24px 8px 20px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: all 0.15s;
+}
+.nav-item:hover, .nav-item.active {
+  color: var(--white);
+  background: rgba(255,255,255,0.06);
+  border-left-color: var(--saffron);
+}
+.nav-item .num {
+  display: inline-block;
+  width: 20px;
+  color: var(--saffron);
+  font-weight: 700;
+  font-size: 11px;
+}
+
+/* ── Main Content ─────────────────────────────────────── */
+#main {
+  margin-left: var(--sidebar-w);
+  flex: 1;
+  min-height: 100vh;
+}
+
+.chapter {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 64px 48px 96px;
+}
+
+/* ── Chapter Hero ─────────────────────────────────────── */
+.chapter-hero {
+  background: var(--navy);
+  color: var(--white);
+  margin-left: 0;
+  max-width: none;
+  padding: 80px 48px 64px;
+  position: relative;
+  overflow: hidden;
+}
+.chapter-hero::before {
+  content: '';
+  position: absolute;
+  right: -80px; top: -80px;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: rgba(30,77,123,0.5);
+}
+.chapter-hero::after {
+  content: '';
+  position: absolute;
+  right: 80px; bottom: -60px;
+  width: 260px; height: 260px;
+  border-radius: 50%;
+  background: rgba(232,119,46,0.15);
+}
+.hero-inner { max-width: var(--content-max); margin: 0 auto; position: relative; z-index: 1; }
+.hero-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--saffron-lt);
+  margin-bottom: 16px;
+}
+.hero-title {
+  font-size: 52px;
+  font-weight: bold;
+  line-height: 1.1;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+.hero-subtitle {
+  font-size: 20px;
+  color: rgba(203,213,225,0.9);
+  max-width: 640px;
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+.hero-stats {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.stat-pill {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  padding: 12px 20px;
+  text-align: center;
+}
+.stat-pill .val {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--saffron);
+  display: block;
+}
+.stat-pill .lbl {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--slate-lt);
+}
+
+/* ── Chapter Header ───────────────────────────────────── */
+.chapter-num {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--saffron);
+  margin-bottom: 8px;
+}
+.chapter-title {
+  font-size: 38px;
+  font-weight: bold;
+  color: var(--navy);
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+.chapter-lead {
+  font-size: 19px;
+  color: var(--slate);
+  line-height: 1.6;
+  margin-bottom: 48px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--slate-lt);
+}
+
+/* ── Typography ───────────────────────────────────────── */
+h2 {
+  font-size: 26px;
+  font-weight: bold;
+  color: var(--navy);
+  margin: 48px 0 16px;
+  padding-top: 8px;
+}
+h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--navy-mid);
+  margin: 32px 0 12px;
+}
+h4 {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--saffron);
+  margin: 24px 0 8px;
+}
+p { margin-bottom: 20px; }
+strong { color: var(--navy); }
+em { color: var(--slate); }
+
+/* ── Callout Boxes ────────────────────────────────────── */
+.callout {
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 28px 0;
+  border-left: 4px solid;
+}
+.callout-title {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.callout-note   { background: #EFF6FF; border-color: var(--navy-light); }
+.callout-note .callout-title { color: var(--navy-mid); }
+.callout-warn   { background: #FFFBEB; border-color: var(--gold); }
+.callout-warn .callout-title { color: #92400E; }
+.callout-key    { background: #F0FDF4; border-color: var(--green); }
+.callout-key .callout-title { color: #065F46; }
+.callout-tip    { background: #FFF7ED; border-color: var(--saffron); }
+.callout-tip .callout-title { color: #9A3412; }
+
+/* ── Cards Grid ───────────────────────────────────────── */
+.cards { display: grid; gap: 20px; margin: 28px 0; }
+.cards-2 { grid-template-columns: 1fr 1fr; }
+.cards-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card {
+  background: var(--white);
+  border: 1px solid var(--slate-lt);
+  border-radius: 10px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border-top: 3px solid var(--saffron);
+}
+.card-icon { font-size: 28px; margin-bottom: 12px; }
+.card h3 { margin: 0 0 8px; font-size: 17px; color: var(--navy); }
+.card p { margin: 0; font-size: 14px; color: var(--slate); line-height: 1.6; }
+.card.accent-navy { border-top-color: var(--navy); }
+.card.accent-green { border-top-color: var(--green); }
+.card.accent-gold { border-top-color: var(--gold); }
+
+/* ── Stat Blocks ──────────────────────────────────────── */
+.stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 32px 0; }
+.stat-block {
+  background: var(--navy);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+.stat-block .big {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--saffron);
+  display: block;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.stat-block .small {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--slate-lt);
+  line-height: 1.4;
+}
+
+/* ── Code Blocks ──────────────────────────────────────── */
+pre {
+  background: #1E293B;
+  border-radius: 8px;
+  padding: 24px;
+  overflow-x: auto;
+  margin: 24px 0;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.7;
+  color: #E2E8F0;
+  border-left: 4px solid var(--saffron);
+}
+code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background: #E2E8F0;
+  color: var(--navy);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+pre code { background: transparent; color: #E2E8F0; padding: 0; }
+.kw  { color: #7DD3FC; }  /* keyword */
+.ty  { color: #6EE7B7; }  /* type */
+.cm  { color: #94A3B8; font-style: italic; }  /* comment */
+.st  { color: #FCA5A5; }  /* string */
+.nm  { color: #FDE68A; }  /* number/name */
+.fn  { color: #C4B5FD; }  /* function */
+
+/* ── Layers Diagram ───────────────────────────────────── */
+.layer-stack { margin: 32px 0; }
+.layer {
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
+  margin-bottom: 4px;
+  border-radius: 6px;
+  position: relative;
+}
+.layer-0 { background: var(--navy); color: var(--white); margin-left: 0; }
+.layer-1 { background: var(--navy-mid); color: var(--white); margin-left: 24px; }
+.layer-2 { background: var(--navy-light); color: var(--white); margin-left: 48px; }
+.layer-3 { background: var(--saffron); color: var(--white); margin-left: 72px; }
+.layer-badge {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  width: 70px;
+  flex-shrink: 0;
+}
+.layer-content { flex: 1; }
+.layer-name { font-weight: bold; font-size: 15px; }
+.layer-items { font-size: 12px; opacity: 0.8; margin-top: 2px; }
+
+/* ── Timeline ─────────────────────────────────────────── */
+.timeline { margin: 32px 0; position: relative; }
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 18px; top: 0; bottom: 0;
+  width: 2px;
+  background: var(--slate-lt);
+}
+.tl-item { display: flex; gap: 24px; margin-bottom: 28px; position: relative; }
+.tl-dot {
+  width: 38px; height: 38px; flex-shrink: 0;
+  background: var(--navy); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-sans); font-size: 11px; font-weight: 700;
+  color: var(--saffron); z-index: 1;
+  border: 3px solid var(--off-white);
+}
+.tl-body { padding-top: 6px; }
+.tl-title { font-weight: bold; color: var(--navy); font-size: 16px; margin-bottom: 4px; }
+.tl-desc { color: var(--slate); font-size: 14px; line-height: 1.6; margin: 0; }
+
+/* ── Phase Steps ──────────────────────────────────────── */
+.phases { margin: 32px 0; }
+.phase {
+  display: flex; gap: 20px; align-items: flex-start;
+  padding: 20px 24px;
+  background: var(--white);
+  border: 1px solid var(--slate-lt);
+  border-radius: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.phase-num {
+  width: 44px; height: 44px; flex-shrink: 0;
+  background: var(--navy); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; font-weight: bold; color: var(--saffron);
+  font-family: var(--font-body);
+}
+.phase-body { flex: 1; }
+.phase-title { font-weight: bold; color: var(--navy); font-size: 17px; margin-bottom: 2px; }
+.phase-dur {
+  font-family: var(--font-sans); font-size: 11px;
+  color: var(--saffron); font-weight: 700; margin-bottom: 6px;
+}
+.phase-desc { color: var(--slate); font-size: 14px; line-height: 1.6; margin: 0; }
+
+/* ── Comparison Table ─────────────────────────────────── */
+.compare {
+  width: 100%; border-collapse: collapse;
+  margin: 28px 0; font-size: 14px;
+  font-family: var(--font-sans);
+  border-radius: 10px; overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.compare th {
+  padding: 14px 18px; text-align: left;
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 1px; text-transform: uppercase;
+}
+.compare th:first-child { background: var(--navy); color: var(--white); }
+.compare th.bad  { background: var(--slate);     color: var(--white); }
+.compare th.good { background: var(--saffron);   color: var(--white); }
+.compare td { padding: 12px 18px; border-bottom: 1px solid #EEF2F7; background: var(--white); }
+.compare td:first-child { font-weight: 600; color: var(--navy); background: #F8FAFC; }
+.compare td.bad  { color: var(--slate); }
+.compare td.good { color: var(--navy); font-weight: 600; }
+.compare tr:last-child td { border-bottom: none; }
+.tick { color: var(--green); font-size: 16px; }
+.cross { color: var(--red); font-size: 16px; }
+
+/* ── Checklist ────────────────────────────────────────── */
+.checklist { list-style: none; margin: 20px 0; }
+.checklist li {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 8px 0; border-bottom: 1px solid #EEF2F7;
+  font-size: 15px;
+}
+.checklist li:last-child { border-bottom: none; }
+.checklist li::before {
+  content: '✓';
+  color: var(--green); font-weight: bold; font-size: 16px;
+  flex-shrink: 0; margin-top: 1px;
+}
+
+/* ── Principle List ───────────────────────────────────── */
+.principles { counter-reset: principle; margin: 28px 0; }
+.principle {
+  counter-increment: principle;
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 16px 0;
+  border-bottom: 1px solid #EEF2F7;
+}
+.principle::before {
+  content: counter(principle, decimal-leading-zero);
+  font-family: var(--font-sans);
+  font-size: 13px; font-weight: 700;
+  color: var(--saffron);
+  background: var(--navy);
+  border-radius: 6px;
+  padding: 4px 8px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.principle-title { font-weight: bold; color: var(--navy); margin-bottom: 2px; }
+.principle-desc  { font-size: 14px; color: var(--slate); line-height: 1.6; margin: 0; }
+
+/* ── Pull Quote ───────────────────────────────────────── */
+.pull-quote {
+  border-left: 4px solid var(--saffron);
+  padding: 16px 24px;
+  margin: 36px 0;
+  background: var(--white);
+  border-radius: 0 8px 8px 0;
+}
+.pull-quote p {
+  font-size: 20px;
+  color: var(--navy);
+  font-style: italic;
+  line-height: 1.5;
+  margin: 0 0 8px;
+}
+.pull-quote cite {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--slate);
+  font-style: normal;
+}
+
+/* ── Cost Bar ─────────────────────────────────────────── */
+.cost-bars { margin: 28px 0; }
+.cost-bar-row { margin-bottom: 16px; }
+.cost-bar-label {
+  font-family: var(--font-sans);
+  font-size: 13px; font-weight: 600;
+  color: var(--slate-dark); margin-bottom: 6px;
+  display: flex; justify-content: space-between;
+}
+.cost-bar-track {
+  height: 28px; background: #EEF2F7;
+  border-radius: 4px; overflow: hidden;
+}
+.cost-bar-fill {
+  height: 100%; border-radius: 4px;
+  display: flex; align-items: center;
+  padding-left: 12px;
+  font-family: var(--font-sans);
+  font-size: 12px; font-weight: 700;
+  color: var(--white);
+  transition: width 0.4s ease;
+}
+.bar-aws  { background: var(--slate);     width: 100%; }
+.bar-nc1  { background: var(--saffron);   width: 55%; }
+.bar-nc3  { background: var(--navy);      width: 35%; }
+
+/* ── Product Grid ─────────────────────────────────────── */
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px;
+  margin: 28px 0;
+}
+.product-card {
+  background: var(--white);
+  border: 1px solid var(--slate-lt);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.product-card-top {
+  display: flex; justify-content: space-between;
+  align-items: flex-start; margin-bottom: 6px;
+}
+.product-name { font-size: 13px; font-weight: 700; color: var(--navy); }
+.live-badge {
+  font-family: var(--font-sans);
+  font-size: 9px; font-weight: 700;
+  background: var(--green); color: var(--white);
+  padding: 2px 6px; border-radius: 10px;
+}
+.product-desc { font-family: var(--font-sans); font-size: 12px; color: var(--slate); line-height: 1.5; margin: 0; }
+
+/* ── Divider ──────────────────────────────────────────── */
+.divider {
+  border: none;
+  border-top: 1px solid var(--slate-lt);
+  margin: 40px 0;
+}
+
+/* ── Footer ───────────────────────────────────────────── */
+#footer {
+  background: var(--navy);
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+  padding: 28px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  margin-left: var(--sidebar-w);
+}
+
+/* ── Responsive ───────────────────────────────────────── */
+@media (max-width: 900px) {
+  :root { --sidebar-w: 0px; }
+  #sidebar { display: none; }
+  #main { margin-left: 0; }
+  .chapter { padding: 40px 24px 64px; }
+  .chapter-hero { padding: 48px 24px 40px; }
+  .hero-title { font-size: 36px; }
+  .stats-row { grid-template-columns: 1fr 1fr; }
+  .cards-2, .cards-3 { grid-template-columns: 1fr; }
+  .product-grid { grid-template-columns: 1fr 1fr; }
+  #footer { margin-left: 0; }
+}
+
+/* ── Active link tracking ─────────────────────────────── */
+.nav-item.active { color: var(--white); border-left-color: var(--saffron); background: rgba(255,255,255,0.06); }
+</style>
+</head>
+<body>
+
+<!-- ══════════════ SIDEBAR ══════════════ -->
+<nav id="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">Juspay Technologies</div>
+    <div class="sidebar-title">Namma Cloud</div>
+    <div class="sidebar-subtitle">Sovereign Banking Infrastructure</div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Preface</div>
+    <a class="nav-item active" href="#cover">Foreword</a>
+
+    <div class="nav-section-label">Part I — The Problem</div>
+    <a class="nav-item" href="#ch1"><span class="num">1</span> The Sovereign Imperative</a>
+    <a class="nav-item" href="#ch2"><span class="num">2</span> The Bank's Infrastructure Crisis</a>
+
+    <div class="nav-section-label">Part II — The Solution</div>
+    <a class="nav-item" href="#ch3"><span class="num">3</span> Why Juspay</a>
+    <a class="nav-item" href="#ch4"><span class="num">4</span> Introducing Namma Cloud</a>
+    <a class="nav-item" href="#ch5"><span class="num">5</span> Core Capabilities</a>
+
+    <div class="nav-section-label">Part III — Deep Dive</div>
+    <a class="nav-item" href="#ch6"><span class="num">6</span> Reliability by Design</a>
+    <a class="nav-item" href="#ch7"><span class="num">7</span> Compliance &amp; Sovereignty</a>
+    <a class="nav-item" href="#ch8"><span class="num">8</span> Cost Economics</a>
+    <a class="nav-item" href="#ch9"><span class="num">9</span> Integrated Products</a>
+
+    <div class="nav-section-label">Part IV — Journey</div>
+    <a class="nav-item" href="#ch10"><span class="num">10</span> Migration Path</a>
+    <a class="nav-item" href="#ch11"><span class="num">11</span> The Vision Ahead</a>
+  </div>
+</nav>
+
+<!-- ══════════════ MAIN ══════════════ -->
+<main id="main">
+
+<!-- ── COVER ── -->
+<section id="cover">
+  <div class="chapter-hero">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">A Pitch for India's Banking Future</div>
+      <h1 class="hero-title">Namma Cloud</h1>
+      <p class="hero-subtitle">
+        India's sovereign, full-stack cloud infrastructure platform — built exclusively for banks, compliant by design, and powered by the team that built India's payments.
+      </p>
+      <div class="hero-stats">
+        <div class="stat-pill"><span class="val">$1 Tn+</span><span class="lbl">Annualised TPV</span></div>
+        <div class="stat-pill"><span class="val">300 Mn+</span><span class="lbl">Transactions/Day</span></div>
+        <div class="stat-pill"><span class="val">99.999%</span><span class="lbl">Uptime Target</span></div>
+        <div class="stat-pill"><span class="val">10,000+</span><span class="lbl">Peak TPS</span></div>
+        <div class="stat-pill"><span class="val">0%</span><span class="lbl">Technical Declines</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-num">Foreword</div>
+    <h1 class="chapter-title">Why This Book Exists</h1>
+    <p class="chapter-lead">
+      The infrastructure that powers Indian banking was never designed for what banking has become. This book is about fixing that — permanently.
+    </p>
+
+    <p>
+      In 2012, Juspay built the SDK that let Indians auto-read OTPs on mobile. In 2016, we designed the BHIM app and the core UPI library. Over the next decade, we touched nearly every layer of India's digital payments stack — not as observers, but as builders.
+    </p>
+    <p>
+      That journey taught us something uncomfortable: <strong>the platforms we build are only as good as the infrastructure they run on.</strong> And today, that infrastructure — for most Indian banks — is a patchwork of ageing on-premise hardware, dollar-denominated hyperscaler contracts, and manual operations held together by institutional knowledge and hope.
+    </p>
+
+    <div class="pull-quote">
+      <p>"The platforms we build are only as good as the infrastructure they run on. And India's banking infrastructure needs to be rebuilt — from the ground up, for India."</p>
+      <cite>— Juspay Infrastructure Team</cite>
+    </div>
+
+    <p>
+      Namma Cloud is our answer. It is a sovereign, full-stack cloud infrastructure platform — built in India, for Indian banks, on Indian soil. It offers everything AWS, GCP, and Azure offer, but without the FX exposure, without the compliance risk, and without the vendor lock-in that has trapped every bank in the country.
+    </p>
+    <p>
+      This book tells that story — the problem, the solution, the capabilities, and the path forward.
+    </p>
+
+    <div class="callout callout-note">
+      <div class="callout-title">📖 How to Read This Book</div>
+      <p style="margin:0">
+        This book is structured in four parts. <strong>Part I</strong> makes the case for why the status quo is no longer acceptable. <strong>Part II</strong> introduces Namma Cloud and the team behind it. <strong>Part III</strong> is a deep technical and commercial dive. <strong>Part IV</strong> outlines the migration journey and long-term vision. CXOs may wish to read Parts I, II, and IV first.
+      </p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" style="margin:0">
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- CHAPTER 1 -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section id="ch1" class="chapter">
+  <div class="chapter-num">Chapter 1</div>
+  <h1 class="chapter-title">The Sovereign Imperative</h1>
+  <p class="chapter-lead">
+    The geopolitical moment has arrived. Sovereign cloud is no longer a philosophical preference — it is a regulatory requirement, a national security posture, and an economic necessity.
+  </p>
+
+  <h2>The World Has Changed</h2>
+  <p>
+    For most of the 2010s, "cloud" meant AWS or Azure. Cheap, scalable, globally available. The tradeoffs — data crossing borders, dollar-denominated costs, dependence on foreign infrastructure — felt abstract. They no longer do.
+  </p>
+  <p>
+    The Russia-Ukraine war demonstrated that global payment rails can be severed overnight. US-China tariff escalations showed that technology supply chains are weaponisable. India's own experience with data localisation debates, the Aadhaar controversy, and NPCI's insistence on data sovereignty have all pointed in one direction: <strong>critical national infrastructure must be controlled nationally.</strong>
+  </p>
+
+  <div class="cards cards-3">
+    <div class="card">
+      <div class="card-icon">🌍</div>
+      <h3>Geopolitical Volatility</h3>
+      <p>Russia-Ukraine, Iran tensions, and US-China decoupling have made dependency on foreign cloud a sovereign risk — not just a technical one.</p>
+    </div>
+    <div class="card accent-gold">
+      <div class="card-icon">⚖️</div>
+      <h3>Regulatory Pressure</h3>
+      <p>RBI, NPCI, and MeitY are each moving — independently and simultaneously — toward mandating data residency and sovereign hosting for critical financial data.</p>
+    </div>
+    <div class="card accent-green">
+      <div class="card-icon">💱</div>
+      <h3>FX Economics</h3>
+      <p>Dollar-denominated cloud bills have not followed Moore's Law. Banks earning in INR face 15–30% cost inflation purely from currency exposure.</p>
+    </div>
+  </div>
+
+  <h2>MeitY's March 2026 Directive</h2>
+  <p>
+    In a March 2026 office memorandum titled <em>Guidelines for Cloud Selection Framework</em>, the Ministry of Electronics and Information Technology directed all ministries and departments to classify their data into three categories before selecting any cloud service:
+  </p>
+
+  <div class="callout callout-warn">
+    <div class="callout-title">🔴 Top Secret / Secret</div>
+    <p style="margin:0">Strictly not permitted to be hosted on commercial cloud platforms at all. Must remain on sovereign, air-gapped infrastructure.</p>
+  </div>
+
+  <div class="callout callout-note">
+    <div class="callout-title">🟡 Category A — Sensitive National Data</div>
+    <p style="margin:0">Includes Aadhaar, PAN, e-Courts, UPI data, passport records, railways, tax systems, voter ID (central); land records, revenue courts, treasury (state). Must be hosted on government cloud services or sovereign-certified providers. <strong>No commercial hyperscalers.</strong></p>
+  </div>
+
+  <div class="callout callout-key">
+    <div class="callout-title">🟢 Category B — Official Use Data</div>
+    <p style="margin:0">RTI-disclosable data, welfare scheme data, public grievances. May be hosted on central/state cloud services or MeitY-notified sovereign providers.</p>
+  </div>
+
+  <p>
+    The implication for banks is unambiguous: UPI transaction data, card data, Aadhaar-linked KYC — everything that makes modern banking work — <strong>cannot legally sit on AWS, GCP, or Azure.</strong> The only compliant path is a sovereign cloud certified by MeitY, or an on-premise infrastructure operated in India.
+  </p>
+
+  <h2>India's RBI Position</h2>
+  <p>
+    The Reserve Bank of India has long maintained that payment system data must be stored exclusively in India. The 2018 circular on Payment System Data Storage made this explicit for UPI and card networks. The 2023 Master Directions on Outsourcing extended this to cloud service providers, requiring banks to ensure data sovereignty, right to audit, and exit clauses.
+  </p>
+
+  <div class="callout callout-tip">
+    <div class="callout-title">💡 The Compliance Trap</div>
+    <p style="margin:0">Banks are caught in a bind: modern cloud-native architecture requires hyperscalers, but RBI mandates on-premise or sovereign hosting. Legacy on-prem is too brittle for modern workloads. The only escape is a sovereign cloud that is actually cloud-native — which is exactly what Namma Cloud is.</p>
+  </div>
+
+  <h2>The Window Is Narrow</h2>
+  <p>
+    Banks that move to sovereign cloud in the next 18–24 months will build on modern, AI-powered infrastructure that gives them a 10-year cost and capability advantage. Banks that wait will face forced migrations under regulatory pressure, with less choice, less time, and higher risk.
+  </p>
+  <p>
+    The sovereign moment is here. The question is not <em>whether</em> to move, but <em>with whom</em>.
+  </p>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- CHAPTER 2 -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section id="ch2" class="chapter">
+  <div class="chapter-num">Chapter 2</div>
+  <h1 class="chapter-title">The Bank's Infrastructure Crisis</h1>
+  <p class="chapter-lead">
+    Most banks in India are running critical workloads on infrastructure that was never designed for the transaction volumes, regulatory requirements, or operational models of 2026. This is not a technical problem. It is an existential one.
+  </p>
+
+  <h2>Six Interlocking Failures</h2>
+  <p>
+    The infrastructure crisis facing Indian banks is not one problem — it is six problems that reinforce each other. Fixing one in isolation does not help. The only solution is a complete rethink.
+  </p>
+
+  <div class="principles">
+    <div class="principle">
+      <div>
+        <div class="principle-title">The Compliance Trap</div>
+        <p class="principle-desc">Banks are caught between RBI's on-premise data localisation mandate and the operational reality that legacy on-prem systems cannot handle modern UPI volumes, latency requirements, or availability targets. Public cloud is non-compliant. Legacy on-prem is non-performant. There is no middle ground — until now.</p>
+      </div>
+    </div>
+    <div class="principle">
+      <div>
+        <div class="principle-title">Infrastructure Debt</div>
+        <p class="principle-desc">Decades of patchwork on-premise infrastructure — heterogeneous hardware, undocumented configurations, single points of failure, manual provisioning — means that the average Indian bank cannot scale its infrastructure in under a week. During salary season, festival periods, or tax filing deadlines, this becomes a crisis every single year.</p>
+      </div>
+    </div>
+    <div class="principle">
+      <div>
+        <div class="principle-title">The Cost Spiral</div>
+        <p class="principle-desc">Dollar-denominated AWS and GCP bills consume an increasingly large share of IT budgets. Cloud costs have not followed Moore's Law — in fact, as workloads grow and FX moves against the rupee, per-transaction infrastructure costs are rising. Meanwhile, wastage rates of 30–40% are common because capacity planning is done manually and conservatively.</p>
+      </div>
+    </div>
+    <div class="principle">
+      <div>
+        <div class="principle-title">The Operations Burden</div>
+        <p class="principle-desc">Hundreds of engineers in every large bank spend their days managing infrastructure instead of building banking products. There is no single pane of glass. A typical bank runs 10+ tools to operate a single Kubernetes cluster. Deployments are weekly batch events, not continuous. Every release carries risk.</p>
+      </div>
+    </div>
+    <div class="principle">
+      <div>
+        <div class="principle-title">Zero Observability</div>
+        <p class="principle-desc">Most banks find out about infrastructure failures from customer complaints, not from their own monitoring. There is no unified alert system, no predictive anomaly detection, no capacity forecasting. Every salary day, every GST filing deadline, every IPO subscription window is a gamble.</p>
+      </div>
+    </div>
+    <div class="principle">
+      <div>
+        <div class="principle-title">Vendor Lock-in</div>
+        <p class="principle-desc">Proprietary managed services from hyperscalers — RDS, DynamoDB, CloudWatch, Lambda — make migration prohibitively expensive. Every bank that chose the "easy" path of managed services 5 years ago is now paying the hyperscaler tax with no exit. The managed services they depend on are Category-A data violations waiting to happen.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pull-quote">
+    <p>"Every one of these six failures has a single root cause: there is no trusted, sovereign, full-stack cloud built for Indian banking. Until now."</p>
+  </div>
+
+  <h2>What Banks Actually Need</h2>
+
+  <table class="compare">
+    <thead>
+      <tr>
+        <th>Requirement</th>
+        <th class="bad">Today (Hyperscaler / Legacy)</th>
+        <th class="good">Namma Cloud</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>RBI Data Localisation</td>
+        <td class="bad"><span class="cross">✗</span> Hyperscalers non-compliant</td>
+        <td class="good"><span class="tick">✓</span> On Indian soil, always</td>
+      </tr>
+      <tr>
+        <td>Auto-scaling for peaks</td>
+        <td class="bad"><span class="cross">✗</span> Manual on legacy; expensive on cloud</td>
+        <td class="good"><span class="tick">✓</span> Predictive, automated, INR-priced</td>
+      </tr>
+      <tr>
+        <td>99.999% uptime</td>
+        <td class="bad"><span class="cross">✗</span> Single-region, manual failover</td>
+        <td class="good"><span class="tick">✓</span> Active-active, auto-failover</td>
+      </tr>
+      <tr>
+        <td>Zero-downtime deployments</td>
+        <td class="bad"><span class="cross">✗</span> Weekly batch, high-risk releases</td>
+        <td class="good"><span class="tick">✓</span> Automated blue-green, A/B tested</td>
+      </tr>
+      <tr>
+        <td>Cost visibility &amp; control</td>
+        <td class="bad"><span class="cross">✗</span> Opaque hyperscaler billing</td>
+        <td class="good"><span class="tick">✓</span> Per-merchant, per-service cost tracking</td>
+      </tr>
+      <tr>
+        <td>UPI / Cards integration</td>
+        <td class="bad"><span class="cross">✗</span> Custom integration required</td>
+        <td class="good"><span class="tick">✓</span> Pre-integrated, certified</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- CHAPTER 3 -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section id="ch3" class="chapter">
+  <div class="chapter-num">Chapter 3</div>
+  <h1 class="chapter-title">Why Juspay</h1>
+  <p class="chapter-lead">
+    Building a cloud for banks requires two things most infrastructure companies don't have: deep banking domain knowledge and battle-tested reliability at national scale. Juspay has both.
+  </p>
+
+  <h2>We Built India's Payments Stack</h2>
+  <p>
+    Juspay did not enter the payments space as a gateway or aggregator. We entered as infrastructure builders. Our work sits beneath the apps, beneath the banks, at the layer where reliability is not a feature — it is the product.
+  </p>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot">2012</div>
+      <div class="tl-body">
+        <div class="tl-title">India's First OTP Auto-Read SDK</div>
+        <p class="tl-desc">Juspay Safe SDK — the first SDK to auto-read OTPs for mobile payments, reducing friction for 300 million mobile banking users.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">2016</div>
+      <div class="tl-body">
+        <div class="tl-title">Built BHIM and the Core UPI Library</div>
+        <p class="tl-desc">Designed and built the BHIM app and the core UPI 2FA SDK — the foundation of India's real-time payments revolution.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">2017</div>
+      <div class="tl-body">
+        <div class="tl-title">First In-App UPI Experience</div>
+        <p class="tl-desc">UPI TPAP SDK — the first solution to bring a seamless in-app UPI experience, eliminating app-switching dropouts.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">2020</div>
+      <div class="tl-body">
+        <div class="tl-title">India's First UPI PSP on Cloud</div>
+        <p class="tl-desc">Built the first cloud-native UPI PSP for banks, delivering better performance and reliability than legacy on-premise deployments.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">2021</div>
+      <div class="tl-body">
+        <div class="tl-title">Designed UPI Lite</div>
+        <p class="tl-desc">Designed and developed small-value payments without UPI PIN — extending the reach of digital payments to India's next 500 million.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">2023</div>
+      <div class="tl-body">
+        <div class="tl-title">UPI Plug-in SDK for 1-Click Payments</div>
+        <p class="tl-desc">The UPI Plug-in SDK powers instant, in-context payments for 400+ merchants — without any effort from the bank or merchant.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Scale That Demands Infrastructure Mastery</h2>
+  <p>
+    Juspay does not operate at startup scale. We operate at national infrastructure scale. The demands of processing $1 trillion in annualised transaction value — reliably, at millisecond latency, with zero technical declines — forced us to build infrastructure capability that no third-party cloud could deliver.
+  </p>
+
+  <div class="stats-row">
+    <div class="stat-block">
+      <span class="big">$1 Tn+</span>
+      <span class="small">Annualised Transaction Value</span>
+    </div>
+    <div class="stat-block">
+      <span class="big">300 Mn+</span>
+      <span class="small">Transactions Processed Daily</span>
+    </div>
+    <div class="stat-block">
+      <span class="big">2.5 Bn+</span>
+      <span class="small">SDK Installs Globally</span>
+    </div>
+    <div class="stat-block">
+      <span class="big">500+</span>
+      <span class="small">Enterprise Banks &amp; Merchants</span>
+    </div>
+  </div>
+
+  <h2>We Know What You Don't Know You Need</h2>
+  <p>
+    A traditional cloud provider builds infrastructure for generic workloads. Juspay builds infrastructure that has processed every edge case in Indian banking — salary runs on the 1st of every month, GST filing surges, IPO subscription windows, RBI system maintenance windows, NPCI outages, and more.
+  </p>
+  <p>
+    Our infrastructure was not designed in a lab. It was designed under fire — 300 million transactions a day, with a bank's reputation on the line for each one.
+  </p>
+
+  <div class="callout callout-key">
+    <div class="callout-title">✅ The Juspay Advantage</div>
+    <p style="margin:0">We are the only cloud provider that has operated at the intersection of Indian banking, NPCI infrastructure, and cloud-native engineering at national scale. Namma Cloud is not a product we built for banks — it is the infrastructure we built to survive building for banks.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- CHAPTER 4 -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section id="ch4" class="chapter">
+  <div class="chapter-num">Chapter 4</div>
+  <h1 class="chapter-title">Introducing Namma Cloud</h1>
+  <p class="chapter-lead">
+    Namma Cloud is a fully sovereign, AI-powered, end-to-end cloud infrastructure platform built exclusively for Indian banks. It is on par with — and in critical ways better than — AWS, GCP, and Azure.
+  </p>
+
+  <h2>One Platform. The Entire Stack.</h2>
+  <p>
+    Most cloud infrastructure offerings solve one layer. A hardware colocation. A managed Kubernetes service. A monitoring tool. Namma Cloud solves the entire stack — from physical servers to running applications — and every layer is designed to work with every other layer.
+  </p>
+
+  <div class="layer-stack">
+    <div class="layer layer-3">
+      <div class="layer-badge">Layer 4</div>
+      <div class="layer-content">
+        <div class="layer-name">Juspay Banking Products</div>
+        <div class="layer-items">UPI Stack · Cards PG · Orchestrator · FASTag · IBMB · JusTrust · BBPS</div>
+      </div>
+    </div>
+    <div class="layer layer-2">
+      <div class="layer-badge">Layer 3</div>
+      <div class="layer-content">
+        <div class="layer-name">Namma Cloud Platform</div>
+        <div class="layer-items">InfraSwitch · Autopilot · Styrofoam · Namma Observe · Namma DB</div>
+      </div>
+    </div>
+    <div class="layer layer-1">
+      <div class="layer-badge">Layer 2</div>
+      <div class="layer-content">
+        <div class="layer-name">Compute, Storage &amp; Orchestration</div>
+        <div class="layer-items">OpenStack · Ceph · Kubernetes · Containers · Object Storage</div>
+      </div>
+    </div>
+    <div class="layer layer-0">
+      <div class="layer-badge">Layer 1</div>
+      <div class="layer-content">
+        <div class="layer-name">Physical Infrastructure</div>
+        <div class="layer-items">Dell/HPE Servers · Arista/Mellanox Networking · CtrlS Mumbai/Hyderabad · Sify · NxtGen</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>What Makes It Different</h2>
+  <div class="cards cards-2">
+    <div class="card">
+      <div class="card-icon">🇮🇳</div>
+      <h3>Sovereign by Architecture</h3>
+      <p>Every component — hardware, software, networking, data — is designed to stay within Indian borders. No foreign dependencies in the critical path.</p>
+    </div>
+    <div class="card accent-navy">
+      <div class="card-icon">🧠</div>
+      <h3>AI-Accelerated Engineering</h3>
+      <p>We leverage AI to compress years of infrastructure development into months. Namma DSL, automated provisioning, ML-based anomaly detection — all AI-enabled.</p>
+    </div>
+    <div class="card accent-green">
+      <div class="card-icon">🔌</div>
+      <h3>Banking-Native Integration</h3>
+      <p>Pre-integrated with NPCI, RBI reporting, UPI networks. No custom integration work needed for Juspay banking products — they run natively on Namma Cloud.</p>
+    </div>
+    <div class="card accent-gold">
+      <div class="card-icon">💰</div>
+      <h3>INR Economics</h3>
+      <p>Priced in INR. No FX exposure. Cost structure follows actual compute economics, not hyperscaler margin expansion. Styrofoam catches wastage in real time.</p>
+    </div>
+  </div>
+
+  <h2>The Multi-DC Architecture</h2>
+  <p>
+    Namma Cloud operates across multiple Tier-4 data centres in India in an active-active configuration. No single point of failure. Instant failover. Zero downtime for region-level events.
+  </p>
+
+  <div class="callout callout-note">
+    <div class="callout-title">🏢 Data Centre Footprint</div>
+    <p style="margin:0">
+      <strong>CtrlS Mumbai</strong> · <strong>CtrlS Hyderabad</strong> · <strong>Sify Technologies</strong> · <strong>NxtGen Datacenter</strong><br>
+      All Tier-3/4 certified. All within India. All active-active — traffic routes to all regions simultaneously, resources are fully utilised, failover is instant.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- CHAPTER 5 -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section id="ch5" class="chapter">
+  <div class="chapter-num">Chapter 5</div>
+  <h1 class="chapter-title">Core Capabilities</h1>
+  <p class="chapter-lead">
+    Five purpose-built components form the heart of Namma Cloud. Each solves a distinct problem that banks face today. Together, they form a complete infrastructure operating system.
+  </p>
+
+  <h2>InfraSwitch — The Operations Brain</h2>
+  <p>
+    InfraSwitch is the central nervous system of Namma Cloud. Every infrastructure change — a deployment, a scaling event, a configuration update, an alert — flows through InfraSwitch's workflow engine.
+  </p>
+  <p>
+    Built in Haskell with 722 source files, InfraSwitch manages <strong>142+ automated infrastructure workflows</strong> across Kubernetes, OpenStack, AWS (for hybrid setups), and GCP. It replaces the 10+ tools most banks use today with a single, unified command centre.
+  </p>
+
+  <div class="cards cards-2">
+    <div class="card">
+      <h3>🎛️ Unified Dashboard</h3>
+      <p>Single pane of glass for cluster setup, Kubernetes management, OpenStack operations, scaling, and configuration across all data centres.</p>
+    </div>
+    <div class="card accent-navy">
+      <h3>🔄 Zero-Downtime Releases</h3>
+      <p>Blue-green deployments with automated A/B testing and staggered rollouts. Every change is monitored, with automatic rollback on anomaly detection.</p>
+    </div>
+    <div class="card accent-gold">
+      <h3>🔒 Four-Dimensional RBAC</h3>
+      <p>Role × Workflow × Resource Pattern × Cloud Provider — fine-grained access control with full audit trails for every infrastructure change.</p>
+    </div>
+    <div class="card accent-green">
+      <h3>🛡️ Crash-Safe by Design</h3>
+      <p>Persistent poll-driven state machine. If a process dies mid-execution, the system resumes from the last checkpoint. At-least-once execution, always.</p>
+    </div>
+  </div>
+
+  <h3>How InfraSwitch Works</h3>
+  <p>Every infrastructure operation in InfraSwitch is a <strong>workflow</strong> — a typed, auditable state machine that progresses through pre-check, execute, and validate phases:</p>
+
+<pre><span class="cm">-- Every infrastructure change is a ReleaseTracker state machine</span>
+<span class="kw">CREATED</span> → <span class="kw">IN_PROGRESS</span> → <span class="kw">UNDER_REVIEW</span> → <span class="kw">APPROVED</span>
+        → <span class="kw">START_RELEASE</span>
+        → [Stage 1 .. Stage N execution]
+        → <span class="kw">STAGGER</span> → <span class="kw">MONITORING</span> → <span class="kw">POST_MONITORING</span>
+        → <span class="kw">STABILIZE</span> → <span class="kw">COMPLETED</span>
+
+<span class="cm">-- On failure: automatic rollback</span>
+        → <span class="kw">ROLLBACK</span> → <span class="kw">REVERT_CHANGES</span> → <span class="kw">UNLOCK</span></pre>
+
+  <p>Every stage has three phases: <code>PRE_TEST</code> (validate preconditions), <code>EXEC</code> (make the cloud API call), and <code>VALIDATE</code> (poll until confirmed). This three-phase model handles eventual consistency correctly — something most operations tools get wrong.</p>
+
+  <hr class="divider">
+
+  <h2>Namma DSL — Infrastructure as Truth</h2>
+  <p>
+    Namma DSL is a Domain Specific Language built in Rust for declaring and managing datacenter infrastructure as code. Its founding philosophy: <strong>invalid infrastructure configurations should not compile.</strong>
+  </p>
+  <p>
+    This is not Infrastructure as Code in the Terraform sense. This is Infrastructure as Type-Safe Code — where the compiler enforces correctness before anything touches production. A misconfigured cable type, a rack capacity violation, an invalid CPU configuration — all caught at compile time.
+  </p>
+
+  <div class="layer-stack">
+    <div class="layer layer-0">
+      <div class="layer-badge">Layer 0</div>
+      <div class="layer-content">
+        <div class="layer-name">Physical (Metal)</div>
+        <div class="layer-items">Dell R740/R750, HPE DL385 servers · Arista 7050X3, Mellanox SN2700 switches · 42U racks with power budgets</div>
+      </div>
+    </div>
+    <div class="layer layer-1">
+      <div class="layer-badge">Layer 1</div>
+      <div class="layer-content">
+        <div class="layer-name">Operating System / Hosts</div>
+        <div class="layer-items">Ubuntu / RHEL / Arista / SONiC · Network interface configuration · Zero-touch provisioning via MAAS / Redfish</div>
+      </div>
+    </div>
+    <div class="layer layer-2">
+      <div class="layer-badge">Layer 2</div>
+      <div class="layer-content">
+        <div class="layer-name">Services</div>
+        <div class="layer-items">OpenStack control plane / compute · Ceph storage clusters · Kubernetes nodes · BGP routing (FRR)</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>The Namma DSL Workflow</h3>
+
+<pre><span class="cm">-- Step 1: Declare desired state in Rust DSL</span>
+<span class="fn">spec!</span> {
+    <span class="ty">Layer0</span> {
+        racks:   [rack_mumbai_1, rack_mumbai_2],
+        servers: [dell_r750_01..dell_r750_24],
+        switches: [arista_7050x3_top_of_rack],
+        links:   [<span class="cm">/* typed: Sfp28Cage → DAC cables only */</span>]
+    }
+    <span class="ty">Layer1</span> {
+        hosts:   [<span class="cm">/* Ubuntu 22.04 on each server */</span>]
+        network: [<span class="cm">/* management + data VLANs, separate */</span>]
+    }
+    <span class="ty">Layer2</span> {
+        clusters: [ceph_storage, openstack_control, k8s_prod]
+        bgp:      [<span class="cm">/* ASNs auto-allocated, neighbors auto-discovered */</span>]
+    }
+}
+
+<span class="cm">-- Step 2: Compile → validates topology invariants</span>
+<span class="cm">-- Step 3: diff(old_state, desired_state) → deterministic plan</span>
+<span class="cm">-- Step 4: InfraSwitch executes the plan</span>
+<span class="cm">-- Step 5: Observe and track reconciliation</span></pre>
+
+  <div class="callout callout-key">
+    <div class="callout-title">✅ Type Safety in Practice</div>
+    <p style="margin:0">If you try to connect an <code>RJ45Port</code> to an <code>Sfp28Cage</code>, the code won't compile. If you try to fill a 42U rack beyond its power budget, the code won't compile. If you try to deploy a routable network node without a configured host, the code won't compile. Every constraint in your datacenter design is enforced before a single command is run.</p>
+  </div>
+
+  <hr class="divider">
+
+  <h2>Autopilot — Zero-Impact Deployments</h2>
+  <p>
+    Autopilot automates the riskiest moment in any software operation: the release. Using blue-green deployments, staggered rollouts, and integrated A/B testing, Autopilot makes every code change a non-event — even for critical payment services.
+  </p>
+
+  <div class="cards cards-3">
+    <div class="card">
+      <h3>🟦🟩 Blue-Green Deployments</h3>
+      <p>Two identical environments. New version deployed to green while blue serves live traffic. Instant cutover. Instant rollback.</p>
+    </div>
+    <div class="card accent-navy">
+      <h3>📊 A/B Statistical Testing</h3>
+      <p>Every release is monitored with binomial, Poisson, and t-test statistical engines. Releases that degrade metrics are automatically aborted before reaching full traffic.</p>
+    </div>
+    <div class="card accent-green">
+      <h3>🎯 Staggered Rollouts</h3>
+      <p>5% → 25% → 50% → 100%. Each stage monitored. Automated continue / warn / abort decisions. No human needed in the critical path.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <h2>Styrofoam — Cost &amp; Capacity Intelligence</h2>
+  <p>
+    Styrofoam is Namma Cloud's predictive capacity planning and cost optimisation engine. It does what every bank wishes its cloud billing dashboard did: tell you in advance what you'll need, and tell you right now what you're wasting.
+  </p>
+
+  <div class="cards cards-2">
+    <div class="card">
+      <h3>📈 Predictive Scaling</h3>
+      <p>Uses time-series decomposition (trend + seasonality + residual) to forecast transaction patterns. Scales infrastructure before the load arrives, not after.</p>
+    </div>
+    <div class="card accent-gold">
+      <h3>🗑️ Wastage Detection</h3>
+      <p>Runs daily. Compares provisioned vs actual usage across EC2, RDS, ElastiCache, and bare metal. Flags over-provisioning with actionable right-sizing recommendations.</p>
+    </div>
+    <div class="card accent-navy">
+      <h3>💳 Cost Calculator</h3>
+      <p>Multi-cloud pricing engine supporting EC2, EBS, RDS, ElastiCache, Load Balancers, NAT Gateways. Compare AWS vs GCP vs Namma Cloud per workload.</p>
+    </div>
+    <div class="card accent-green">
+      <h3>🎯 ML Recommendations</h3>
+      <p>Statistical analysis of p50/p95/p99 metrics with confidence scores. Detects growth trends. Recommends optimal resource sizes with safety headroom.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <h2>Namma Observe — Full-Stack Visibility</h2>
+  <p>
+    Every layer of Namma Cloud — from bare metal CPU utilisation to UPI transaction success rates — is observable through a single, unified monitoring platform. Not just dashboards. Intelligent, automated observability.
+  </p>
+
+  <ul class="checklist">
+    <li><strong>Infrastructure Metrics</strong> — CPU, memory, disk, network for every machine. Real-time and historical.</li>
+    <li><strong>Application Metrics</strong> — Business metrics frameworks for payment success rates, latency, throughput per service.</li>
+    <li><strong>ML Anomaly Detection (Shifu 2.0)</strong> — RandomForest, Prophet, IsolationForest models trained on your traffic patterns. Catches anomalies before they become outages.</li>
+    <li><strong>Automated RCA</strong> — Graph-based root cause analysis with temporal causality. When an alert fires, the dashboard of the most anomalous metrics is automatically generated and posted to your Slack.</li>
+    <li><strong>Mobile Alerts (Jusping)</strong> — Firebase push notifications, critical alert sounds, per-alert mute/acknowledge. Your on-call engineer knows about issues before customers do.</li>
+    <li><strong>Namma DB Tiering</strong> — Database storage tiered across SSD → HDD → Tape, with automated data promotion/demotion based on access patterns.</li>
+  </ul>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- CHAPTER 6 -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section id="ch6" class="chapter">
+  <div class="chapter-num">Chapter 6</div>
+  <h1 class="chapter-title">Reliability by Design</h1>
+  <p class="chapter-lead">
+    99.999% availability is not an aspiration at Juspay — it is an engineering requirement. Every architectural decision in Namma Cloud is made through the lens of: "What happens when this fails?"
+  </p>
+
+  <h2>The Ten Tenets</h2>
+  <p>
+    Juspay's Reliability Principles are not a marketing document. They are the operating philosophy that governs every infrastructure decision, every deployment, and every incident response.
+  </p>
+
+  <div class="principles">
+    <div class="principle">
+      <div>
+        <div class="principle-title">Abundant Redundancy, Active-Active, Instant Failover</div>
+        <p class="principle-desc">No single point of failure at any layer. Every critical component has a symmetric redundant counterpart, actively processing requests. Failover is instant and automatic.</p>
+      </div>
+    </div>
+    <div class="principle">
+      <div>
+        <div class="principle-title">Critical Path — 100X Strong, Utterly Simple</div>
+        <p class="principle-desc">The critical path (payment processing, UPI routing, authentication) must be impossibly simple and impossibly strong. Complexity is the enemy of reliability.</p>
+      </div>
+    </div>
+    <div class="principle">
+      <div>
+        <div class="principle-title">Reduce Blast Radius</div>
+        <p class="principle-desc">Failures should be contained. Merchant-level sharding, namespace-level isolation, circuit breakers between services — every boundary limits the damage of any single failure.</p>
+      </div>
+    </div>
+    <div class="principle">
+      <div>
+        <div class="principle-title">Auto Anomaly Detection, Auto RCA</div>
+        <p class="principle-desc">Failures should be detected and diagnosed before humans are paged. Shifu and Shifu-2.0 provide millisecond anomaly detection and automated root cause analysis.</p>
+      </div>
+    </div>
+    <div class="principle">
+      <div>
+        <div class="principle-title">Dynamic Model-Based Capacity Allocation</div>
+        <p class="principle-desc">Capacity must be allocated based on traffic models, not historical averages. Styrofoam ensures zero bottlenecks by predicting demand and provisioning ahead of it.</p>
+      </div>
+    </div>
+    <div class="principle">
+      <div>
+        <div class="principle-title">Mandatory Staggering, A/B Testing &amp; Rollback for All Changes</div>
+        <p class="principle-desc">No change — code, config, or infrastructure — goes directly to 100% of traffic. Every change is staggered, monitored, and ready to roll back in seconds.</p>
+      </div>
+    </div>
+    <div class="principle">
+      <div>
+        <div class="principle-title">Testing the Limits — Load, Failure, Chaos Tests in Production</div>
+        <p class="principle-desc">We chaos test in production. Load tests validate scale claims. Failure injection tests validate failover assumptions. We test limits before customers find them.</p>
+      </div>
+    </div>
+    <div class="principle">
+      <div>
+        <div class="principle-title">RCA/CoE Process Done with Rigour</div>
+        <p class="principle-desc">Every incident is a Root Cause Analysis. Every RCA is a Culture of Excellence opportunity. No incident is closed without a systemic fix in the critical path.</p>
+      </div>
+    </div>
+    <div class="principle">
+      <div>
+        <div class="principle-title">Set Ambitious SLAs/SLOs — Constantly Improve</div>
+        <p class="principle-desc">99.999% is not a target we declare on slides. It is an SLO we measure in dashboards, review in post-mortems, and improve every quarter.</p>
+      </div>
+    </div>
+    <div class="principle">
+      <div>
+        <div class="principle-title">Org-Wide Collective Ownership</div>
+        <p class="principle-desc">Reliability is not the SRE team's problem. It is every engineer's problem, every product manager's problem, every CXO's problem. The culture reinforces it daily.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>The Yin and Yang of Reliability</h2>
+  <p>
+    Juspay's reliability philosophy recognises a fundamental tension in distributed systems: the same properties that make a system flexible and scalable (decentralisation, diversity, complexity) are the properties that make it fragile. Reliability requires holding both sides simultaneously.
+  </p>
+
+  <div class="cards cards-2">
+    <div class="card accent-navy">
+      <h3>⚫ Critical Path (Yin)</h3>
+      <p>Unified · Centralised · Simple · Stable · Certain · Very Strong. The critical path — failover switches, load balancers, rate limiters, authentication — must be narrow, strong, and never fail.</p>
+    </div>
+    <div class="card">
+      <h3>⚪ Abundance Side (Yang)</h3>
+      <p>Diversity · Redundancy · Distribution · Decentralisation · Complexity · Possibility. The system's resilience comes from abundant redundancy outside the critical path.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-tip">
+    <div class="callout-title">💡 The Golden Rule</div>
+    <p style="margin:0">Every RCA must ask: "Why did the critical path not catch this?" If the CP caught it, it was handled. If it didn't, the CP needs to be strengthened. This recursive improvement loop is why Juspay's uptime keeps improving.</p>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-block">
+      <span class="big">99.999%</span>
+      <span class="small">Target Uptime SLA</span>
+    </div>
+    <div class="stat-block">
+      <span class="big">&lt;100ms</span>
+      <span class="small">Transaction Latency</span>
+    </div>
+    <div class="stat-block">
+      <span class="big">50,000+</span>
+      <span class="small">TPS Tested Capacity</span>
+    </div>
+    <div class="stat-block">
+      <span class="big">0%</span>
+      <span class="small">Technical Declines</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- CHAPTER 7 -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section id="ch7" class="chapter">
+  <div class="chapter-num">Chapter 7</div>
+  <h1 class="chapter-title">Compliance &amp; Sovereignty</h1>
+  <p class="chapter-lead">
+    Namma Cloud is the only full-stack cloud infrastructure that is natively built for Indian banking compliance — not retrofitted, not partially compliant, not "working with regulators." Compliant by architecture.
+  </p>
+
+  <h2>Every Compliance Requirement, Addressed</h2>
+
+  <table class="compare">
+    <thead>
+      <tr>
+        <th>Requirement</th>
+        <th class="bad">Hyperscaler Status</th>
+        <th class="good">Namma Cloud</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>RBI Data Localisation (2018 Circular)</td>
+        <td class="bad">Non-compliant for UPI/payment data</td>
+        <td class="good">All data on Indian soil, always</td>
+      </tr>
+      <tr>
+        <td>MeitY Category-A Data</td>
+        <td class="bad">Explicitly prohibited</td>
+        <td class="good">Sovereign-certified, Category-A ready</td>
+      </tr>
+      <tr>
+        <td>NPCI Network Connectivity</td>
+        <td class="bad">Requires expensive third-party leased lines</td>
+        <td class="good">Direct NPCI peering, low latency</td>
+      </tr>
+      <tr>
+        <td>DPDP Act Compliance</td>
+        <td class="bad">Partial — cross-border transfer risks</td>
+        <td class="good">Full data residency, consent frameworks</td>
+      </tr>
+      <tr>
+        <td>RBI Outsourcing Master Directions</td>
+        <td class="bad">Audit rights, exit clauses complex</td>
+        <td class="good">Full audit access, Indian jurisdiction</td>
+      </tr>
+      <tr>
+        <td>Secret Management</td>
+        <td class="bad">Credentials often on disk or in env vars</td>
+        <td class="good">OpenBao + IMDS — zero credentials on disk</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Secret Management: OpenBao + IMDS</h2>
+  <p>
+    One of the most common — and most dangerous — security anti-patterns in cloud infrastructure is storing credentials on disk or in environment variables. Every bank that has had a credential leak knows this cost.
+  </p>
+  <p>
+    Namma Cloud uses <strong>OpenBao</strong> (an open-source, auditable fork of HashiCorp Vault) combined with <strong>IMDS (Instance Metadata Service)</strong> for secure VM secret access. No credentials ever touch disk. Secrets are fetched at runtime via instance identity, with full audit trails.
+  </p>
+
+  <div class="callout callout-note">
+    <div class="callout-title">🔐 How It Works</div>
+    <p style="margin:0">
+      A VM that needs a database password does not have the password in its config file. Instead, it presents its IMDS-provided identity token to OpenBao, which validates the identity and returns the secret — temporarily, with an expiry. The secret is never stored. The identity is unforgeable. The audit trail is complete.
+    </p>
+  </div>
+
+  <h2>Zero Touch Provisioning</h2>
+  <p>
+    New servers in Namma Cloud go from physical delivery to production-ready without a single manual step. The <strong>discover → commission → deploy</strong> lifecycle is fully automated:
+  </p>
+
+<pre><span class="nm">1.</span> Server arrives at data centre
+<span class="nm">2.</span> Network boots via MAAS/Redfish (PXE)
+<span class="nm">3.</span> Namma DSL detects new hardware via LLDP discovery
+<span class="nm">4.</span> OS image deployed automatically (Ubuntu 22.04 LTS)
+<span class="nm">5.</span> Network interfaces configured from DSL specification
+<span class="nm">6.</span> BGP neighbours auto-discovered from topology
+<span class="nm">7.</span> Kubernetes node joins cluster with correct labels/taints
+<span class="nm">8.</span> OpenBao issues identity certificate
+<span class="nm">9.</span> Server is production-ready — zero human SSH sessions</pre>
+
+  <h2>The Air-Gap Option</h2>
+  <p>
+    For banks that require complete network isolation for their most sensitive workloads — core banking, RTGS, NEFT infrastructure — Namma Cloud supports fully air-gapped cluster operation. No mandatory internet dependency. No telemetry leaving the premises. Full operational capability in an isolated environment.
+  </p>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- CHAPTER 8 -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section id="ch8" class="chapter">
+  <div class="chapter-num">Chapter 8</div>
+  <h1 class="chapter-title">Cost Economics</h1>
+  <p class="chapter-lead">
+    The business case for Namma Cloud is not just regulatory compliance. It is a dramatically better cost structure — with better performance, better visibility, and no FX risk.
+  </p>
+
+  <h2>The Total Cost of Cloud</h2>
+  <p>
+    Most comparisons between on-premise and cloud focus on the wrong costs. The real comparison is Total Cost of Ownership (TCO) — including compute, storage, networking, management overhead, compliance spend, FX exposure, and egress fees.
+  </p>
+  <p>
+    When you add up all of these, the cost of running critical banking workloads on AWS or GCP is significantly higher than the headline compute prices suggest — and it rises every year.
+  </p>
+
+  <h3>Illustrative Cost Index (Current Hyperscaler = 100)</h3>
+  <div class="cost-bars">
+    <div class="cost-bar-row">
+      <div class="cost-bar-label">
+        <span>AWS / GCP Today</span>
+        <span>Index: 100</span>
+      </div>
+      <div class="cost-bar-track">
+        <div class="cost-bar-fill bar-aws">Baseline — dollar-denominated, FX-exposed, compliance non-trivial</div>
+      </div>
+    </div>
+    <div class="cost-bar-row">
+      <div class="cost-bar-label">
+        <span>Namma Cloud — Year 1</span>
+        <span>Index: ~55</span>
+      </div>
+      <div class="cost-bar-track">
+        <div class="cost-bar-fill bar-nc1">~45% lower TCO from year one</div>
+      </div>
+    </div>
+    <div class="cost-bar-row">
+      <div class="cost-bar-label">
+        <span>Namma Cloud — Year 3</span>
+        <span>Index: ~35</span>
+      </div>
+      <div class="cost-bar-track">
+        <div class="cost-bar-fill bar-nc3">~65% lower TCO at steady state</div>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:12px;color:var(--slate);margin-top:8px;font-family:var(--font-sans)"><em>Illustrative cost index. Actual savings depend on workload profile, current infrastructure, and migration scope.</em></p>
+
+  <h2>Where the Savings Come From</h2>
+  <div class="cards cards-2">
+    <div class="card">
+      <h3>💱 No FX Risk</h3>
+      <p>INR-denominated pricing. No exposure to dollar fluctuations. No global tariff-driven cost increases. Your infrastructure budget is predictable.</p>
+    </div>
+    <div class="card accent-navy">
+      <h3>🗄️ Namma DB Tiering</h3>
+      <p>Databases split across SSD → HDD → Tape based on access frequency. Storage costs drop 60–80% versus managed cloud databases without any performance impact on hot data.</p>
+    </div>
+    <div class="card accent-gold">
+      <h3>🔍 Styrofoam Savings</h3>
+      <p>Daily wastage detection and ML-based right-sizing recommendations reduce infrastructure spend by 20–40%. Most banks provision for peak and forget.</p>
+    </div>
+    <div class="card accent-green">
+      <h3>📦 Included Services</h3>
+      <p>Monitoring, CI/CD, secrets management, networking, load balancing — all included. No per-feature surcharges. No egress fees between zones.</p>
+    </div>
+  </div>
+
+  <h2>Namma DB Tiering: The Storage Revolution</h2>
+  <p>
+    One of the largest and most overlooked costs in banking infrastructure is database storage. Most banks have vast amounts of historical transaction data that is almost never accessed — but they pay SSD prices to store it, because their database doesn't have a cheaper tier.
+  </p>
+  <p>
+    Namma DB splits data across three storage tiers based on access patterns:
+  </p>
+
+<pre><span class="ty">Hot Tier</span>  (NVMe SSD)  — Last 30 days of transaction data
+                        UPI/card real-time processing
+                        <span class="nm">&lt;1ms</span> read latency
+
+<span class="ty">Warm Tier</span> (SATA HDD)  — 30 days to 7 years of data
+                        Regulatory reporting, audit queries
+                        <span class="nm">~10ms</span> read latency
+
+<span class="ty">Cold Tier</span> (Tape/S3)  — 7+ years of archived data
+                        Legal hold, SEBI/RBI archive requirements
+                        <span class="nm">Seconds</span> retrieval, <span class="nm">1/20th</span> the cost</pre>
+
+  <div class="callout callout-key">
+    <div class="callout-title">💡 The Economics</div>
+    <p style="margin:0">A bank storing 100TB of historical transaction data on managed RDS today pays approximately ₹2–3 Cr/month. The same data on Namma DB tiering costs ₹25–40L/month — a 75–85% reduction — with identical compliance and retrieval SLAs.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- CHAPTER 9 -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section id="ch9" class="chapter">
+  <div class="chapter-num">Chapter 9</div>
+  <h1 class="chapter-title">Integrated Banking Products</h1>
+  <p class="chapter-lead">
+    Every Juspay banking product runs natively on Namma Cloud. For banks that use Juspay products, this means zero integration work and immediate access to a unified infrastructure and application layer.
+  </p>
+
+  <h2>One Platform, Every Banking Product</h2>
+  <p>
+    Juspay has spent over a decade building the individual products that power Indian banking. Namma Cloud is the platform that unifies them — the infrastructure layer beneath every product, pre-configured, pre-certified, and ready to run.
+  </p>
+
+  <div class="product-grid">
+    <div class="product-card">
+      <div class="product-card-top">
+        <div class="product-name">UPI Issuer Switch</div>
+        <div class="live-badge">LIVE</div>
+      </div>
+      <p class="product-desc">Full UPI stack — onboarding, P2P/P2M payments, UPI Lite, Autopay, credit on UPI. Cloud-native, 0% technical declines.</p>
+    </div>
+    <div class="product-card">
+      <div class="product-card-top">
+        <div class="product-name">UPI Consumer Stack</div>
+        <div class="live-badge">LIVE</div>
+      </div>
+      <p class="product-desc">In-app UPI with 90%+ conversion rates. No app-switch flows. Cache-based architecture at 10,000+ TPS.</p>
+    </div>
+    <div class="product-card">
+      <div class="product-card-top">
+        <div class="product-name">UPI Acquiring</div>
+        <div class="live-badge">LIVE</div>
+      </div>
+      <p class="product-desc">Merchant onboarding, offline/online acquisition, QR codes, analytics, reconciliation across all channels.</p>
+    </div>
+    <div class="product-card">
+      <div class="product-card-top">
+        <div class="product-name">White Label Cards PG</div>
+        <div class="live-badge">LIVE</div>
+      </div>
+      <p class="product-desc">Acquiring + issuing, ACS, tokenization (150Mn+ tokens), 3DS 2.0, smart routing, dispute management.</p>
+    </div>
+    <div class="product-card">
+      <div class="product-card-top">
+        <div class="product-name">IBMB (Netbanking 2.0)</div>
+        <div class="live-badge">LIVE</div>
+      </div>
+      <p class="product-desc">Intent + QR flows via NBBL switch. Replaces legacy redirection-based netbanking with secure, low-dropout flows.</p>
+    </div>
+    <div class="product-card">
+      <div class="product-card-top">
+        <div class="product-name">FASTag</div>
+        <div class="live-badge">LIVE</div>
+      </div>
+      <p class="product-desc">Complete FASTag issuing + acquiring stack for highway toll collections and mobility payments.</p>
+    </div>
+    <div class="product-card">
+      <div class="product-card-top">
+        <div class="product-name">JusTrust (Fraud)</div>
+        <div class="live-badge">LIVE</div>
+      </div>
+      <p class="product-desc">Real-time fraud intelligence with Smart Registry, money flow tracking, mule account detection, and ML risk scoring.</p>
+    </div>
+    <div class="product-card">
+      <div class="product-card-top">
+        <div class="product-name">Payment Orchestration</div>
+        <div class="live-badge">LIVE</div>
+      </div>
+      <p class="product-desc">Smart routing, tokenization, payins/payouts, white-label checkout, analytics — across all payment methods and networks.</p>
+    </div>
+    <div class="product-card">
+      <div class="product-card-top">
+        <div class="product-name">LMS Credit Line</div>
+        <div class="live-badge">LIVE</div>
+      </div>
+      <p class="product-desc">Digital lending platform with AI-native collection suite, credit on UPI issuance and acquiring support.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-note">
+    <div class="callout-title">🔌 Zero Integration Overhead</div>
+    <p style="margin:0">When your bank runs on Namma Cloud, every Juspay product is pre-wired into the infrastructure. No API integration projects. No network configuration. No security review for each product. One infrastructure onboarding unlocks the entire Juspay product catalogue.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- CHAPTER 10 -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section id="ch10" class="chapter">
+  <div class="chapter-num">Chapter 10</div>
+  <h1 class="chapter-title">The Migration Path</h1>
+  <p class="chapter-lead">
+    Moving critical banking infrastructure is one of the highest-stakes projects a bank can undertake. Namma Cloud's migration approach is designed around one principle: zero disruption to production banking operations.
+  </p>
+
+  <h2>The Strangler Fig Strategy</h2>
+  <p>
+    The strangler fig tree grows around its host, gradually taking its place — but never disrupting it. Namma Cloud's migration strategy follows the same pattern: grow the new system around the old one, validate at every step, and replace components only when the replacement is proven.
+  </p>
+  <p>
+    This is not a big-bang migration. It is a systematic, phase-by-phase transition where the bank retains full operational capability throughout.
+  </p>
+
+  <div class="phases">
+    <div class="phase">
+      <div class="phase-num">01</div>
+      <div class="phase-body">
+        <div class="phase-title">Foundation</div>
+        <div class="phase-dur">Months 1–3</div>
+        <p class="phase-desc">Physical DC setup, Namma DSL baseline declaration, network and storage commissioning. Zero-touch provisioning. OpenBao secret management deployed. InfraSwitch connected to the new environment. No production traffic moved yet.</p>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="phase-num">02</div>
+      <div class="phase-body">
+        <div class="phase-title">Observability Layer</div>
+        <div class="phase-dur">Months 2–5 (overlapping)</div>
+        <p class="phase-desc">Namma Observe deployed to monitor both the existing infrastructure and the new Namma Cloud environment. Anomaly detection baselines established. Alert consolidation — one Slack channel, one mobile app, one dashboard. Shadow mode: Namma Cloud receives traffic but does not process it yet.</p>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="phase-num">03</div>
+      <div class="phase-body">
+        <div class="phase-title">Non-Critical Workload Migration</div>
+        <div class="phase-dur">Months 4–8</div>
+        <p class="phase-desc">Non-critical workloads — analytics, batch processing, reporting, internal tools — migrated first. Autopilot blue-green deployments. Styrofoam validates cost projections against actuals. Team builds operational muscle before touching production payments.</p>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="phase-num">04</div>
+      <div class="phase-body">
+        <div class="phase-title">Payment Stack Migration</div>
+        <div class="phase-dur">Months 8–12</div>
+        <p class="phase-desc">UPI, cards, and netbanking workloads migrated with parallel-run strategy. Namma Cloud receives shadow traffic, results compared in real time. Staggered cutover: 5% → 25% → 50% → 100% with A/B statistical validation at each stage. Rollback available at any point.</p>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="phase-num">05</div>
+      <div class="phase-body">
+        <div class="phase-title">Full Sovereignty</div>
+        <div class="phase-dur">Months 12–18</div>
+        <p class="phase-desc">Complete exit from commercial hyperscalers. All data on Indian sovereign infrastructure. Single pane of glass for all operations. Namma DB tiering in production. Full Juspay product integration live. Hyperscaler contracts terminated.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>What the Bank Provides</h2>
+  <p>
+    Namma Cloud is a managed offering. The bank's team does not need to become experts in Ceph, OpenStack, or Kubernetes internals. Here is what the bank brings to the partnership:
+  </p>
+  <ul class="checklist">
+    <li>Executive sponsorship and a dedicated migration programme manager</li>
+    <li>Access to current infrastructure configurations and runbooks</li>
+    <li>Network connectivity between existing and new environments during parallel running</li>
+    <li>Business sign-off on cutover windows for each workload</li>
+    <li>Regulatory liaison for any approvals required from RBI/NPCI</li>
+  </ul>
+
+  <div class="callout callout-key">
+    <div class="callout-title">✅ Juspay's Commitment</div>
+    <p style="margin:0">Juspay provides the full stack: hardware procurement and commissioning, Namma DSL declaration, network design, OpenStack/Ceph/Kubernetes deployment, migration tooling, parallel-run monitoring, cutover execution, and ongoing operations support. The bank's engineers are observers and approvers — not implementors.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- CHAPTER 11 -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section id="ch11" class="chapter">
+  <div class="chapter-num">Chapter 11</div>
+  <h1 class="chapter-title">The Vision Ahead</h1>
+  <p class="chapter-lead">
+    Namma Cloud is not a product release. It is a platform strategy — one that gets stronger with every bank that joins, every product that integrates, and every year that the sovereign cloud ecosystem matures.
+  </p>
+
+  <h2>The Network Effect</h2>
+  <p>
+    Every bank on Namma Cloud strengthens the platform for every other bank. Shared threat intelligence from JusTrust means fraud patterns detected at one bank protect all banks. Shared NPCI connectivity means better performance for everyone. Shared capacity pools mean better utilisation economics for all.
+  </p>
+  <p>
+    This is the power of a shared sovereign infrastructure — not a compromise on isolation or security, but a multiplier on collective capability.
+  </p>
+
+  <h2>The 2026–2028 Roadmap</h2>
+  <div class="cards cards-2">
+    <div class="card">
+      <h3>🤖 AI-Native Operations</h3>
+      <p>Namma Cloud's operational intelligence will be AI-native — predictive scaling, automated RCA, self-healing infrastructure. Engineers manage policy, not processes.</p>
+    </div>
+    <div class="card accent-navy">
+      <h3>🏦 Namma DB — Production Scale</h3>
+      <p>The full Namma DB vision — tiered storage across SSD/HDD/Tape with tenant isolation, full ACID compliance, and banking-grade durability — at production scale for all participants.</p>
+    </div>
+    <div class="card accent-green">
+      <h3>🌐 Sovereign Connectivity Fabric</h3>
+      <p>Direct peering with NPCI, SWIFT, and RBI reporting systems — eliminating third-party connectivity costs and compliance complexity for all participating banks.</p>
+    </div>
+    <div class="card accent-gold">
+      <h3>📱 Developer Platform</h3>
+      <p>A self-service developer platform for bank engineering teams — deploy applications, manage configurations, monitor performance — without needing infrastructure expertise.</p>
+    </div>
+  </div>
+
+  <h2>The Invitation</h2>
+  <p>
+    India's banking infrastructure needs to be sovereign, modern, and built for the scale of the world's most populous digital economy. The geopolitical moment is here. The regulatory direction is clear. The technology is ready.
+  </p>
+  <p>
+    Namma Cloud is not a product any single bank could build alone. It requires the combination of infrastructure engineering depth, banking domain knowledge, NPCI relationships, and national-scale operational experience that Juspay has spent 14 years assembling.
+  </p>
+
+  <div class="pull-quote">
+    <p>"India deserves its own cloud. Not a cloud that happens to have an Indian data centre. A cloud that was designed, from first principles, for Indian banking — by the team that built Indian payments."</p>
+    <cite>— Juspay Technologies, March 2026</cite>
+  </div>
+
+  <h2>Next Steps</h2>
+  <p>
+    We propose a <strong>two-hour technical deep dive</strong> with your infrastructure and technology leadership. In that session, we will:
+  </p>
+  <ul class="checklist">
+    <li>Walk through your current infrastructure topology and identify the highest-value migration targets</li>
+    <li>Demonstrate InfraSwitch and Namma DSL on a live environment</li>
+    <li>Build a preliminary TCO model for your specific workload profile</li>
+    <li>Present a milestone-based migration roadmap with risk-adjusted timelines</li>
+    <li>Address any RBI/NPCI compliance questions with documented evidence</li>
+  </ul>
+
+  <div class="callout callout-tip">
+    <div class="callout-title">📬 Get in Touch</div>
+    <p style="margin:0">
+      <strong>Email:</strong> contact@juspay.in &nbsp;|&nbsp;
+      <strong>Web:</strong> www.juspay.in &nbsp;|&nbsp;
+      <strong>Office:</strong> Bengaluru, India<br>
+      <br>
+      To schedule the technical deep dive, reach out to your Juspay account team or write directly to the infrastructure team at infra@juspay.in.
+    </p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="callout callout-note" style="text-align:center">
+    <p style="font-size:22px;font-weight:bold;color:var(--navy);margin-bottom:8px">Namma Cloud</p>
+    <p style="margin:0;color:var(--slate)">Eight repositories. One abstraction. One language. One system.<br>India's sovereign banking infrastructure — built, proven, and ready.</p>
+  </div>
+</section>
+
+</main>
+
+<footer id="footer">
+  <p>Namma Cloud — Juspay Technologies Pvt. Ltd. &nbsp;·&nbsp; Bengaluru, India &nbsp;·&nbsp; March 2026</p>
+  <p style="margin-top:6px">Confidential — prepared for bank CXO audiences. Not for distribution.</p>
+</footer>
+
+<script>
+// Active nav highlighting on scroll
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-item');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(l => l.classList.remove('active'));
+      const active = document.querySelector(`.nav-item[href="#${entry.target.id}"]`);
+      if (active) active.classList.add('active');
+    }
+  });
+}, { threshold: 0.15, rootMargin: '-60px 0px -60% 0px' });
+
+sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
