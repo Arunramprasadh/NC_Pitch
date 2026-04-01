@@ -229,15 +229,22 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#six-interlocking-failures" id="toc-six-interlocking-failures" class="nav-link active" data-scroll-target="#six-interlocking-failures"><span class="header-section-number">3.1</span> Six Interlocking Failures</a></li>
+  <li><a href="#what-banks-actually-need" id="toc-what-banks-actually-need" class="nav-link" data-scroll-target="#what-banks-actually-need"><span class="header-section-number">3.2</span> What Banks Actually Need</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch1.html">Part I — The Problem</a></li><li class="breadcrumb-item"><a href="./ch2.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Bank's Infrastructure Crisis</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="the-banks-infrastructure-crisis" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Bank's Infrastructure Crisis</span></span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Bank's Infrastructure Crisis</span></h1>
 </div>
 
 
@@ -254,67 +261,36 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="ch2" class="chapter">
-<div class="chapter-num">
 <p>Chapter 2</p>
-</div>
 <p>Most banks in India are running critical workloads on infrastructure that was never designed for the transaction volumes, regulatory requirements, or operational models of 2026. This is not a technical problem. It is an existential one.</p>
 <section id="six-interlocking-failures" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="six-interlocking-failures"><span class="header-section-number">3.1</span> Six Interlocking Failures</h2>
 <p>The infrastructure crisis facing Indian banks is not one problem — it is six problems that reinforce each other. Fixing one in isolation does not help. The only solution is a complete rethink.</p>
-<div class="principles">
-<div class="principle">
 <div>
-<div class="principle-title">
 <p>The Compliance Trap</p>
-</div>
 <p>Banks are caught between RBI's on-premise data localisation mandate and the operational reality that legacy on-prem systems cannot handle modern UPI volumes, latency requirements, or availability targets. Public cloud is non-compliant. Legacy on-prem is non-performant. There is no middle ground — until now.</p>
 </div>
-</div>
-<div class="principle">
 <div>
-<div class="principle-title">
 <p>Infrastructure Debt</p>
-</div>
 <p>Decades of patchwork on-premise infrastructure — heterogeneous hardware, undocumented configurations, single points of failure, manual provisioning — means that the average Indian bank cannot scale its infrastructure in under a week. During salary season, festival periods, or tax filing deadlines, this becomes a crisis every single year.</p>
 </div>
-</div>
-<div class="principle">
 <div>
-<div class="principle-title">
 <p>The Cost Spiral</p>
-</div>
 <p>Dollar-denominated AWS and GCP bills consume an increasingly large share of IT budgets. Cloud costs have not followed Moore's Law — in fact, as workloads grow and FX moves against the rupee, per-transaction infrastructure costs are rising. Meanwhile, wastage rates of 30–40% are common because capacity planning is done manually and conservatively.</p>
 </div>
-</div>
-<div class="principle">
 <div>
-<div class="principle-title">
 <p>The Operations Burden</p>
-</div>
 <p>Hundreds of engineers in every large bank spend their days managing infrastructure instead of building banking products. There is no single pane of glass. A typical bank runs 10+ tools to operate a single Kubernetes cluster. Deployments are weekly batch events, not continuous. Every release carries risk.</p>
 </div>
-</div>
-<div class="principle">
 <div>
-<div class="principle-title">
 <p>Zero Observability</p>
-</div>
 <p>Most banks find out about infrastructure failures from customer complaints, not from their own monitoring. There is no unified alert system, no predictive anomaly detection, no capacity forecasting. Every salary day, every GST filing deadline, every IPO subscription window is a gamble.</p>
 </div>
-</div>
-<div class="principle">
 <div>
-<div class="principle-title">
 <p>Vendor Lock-in</p>
-</div>
 <p>Proprietary managed services from hyperscalers — RDS, DynamoDB, CloudWatch, Lambda — make migration prohibitively expensive. Every bank that chose the "easy" path of managed services 5 years ago is now paying the hyperscaler tax with no exit. The managed services they depend on are Category-A data violations waiting to happen.</p>
 </div>
-</div>
-</div>
-<div class="pull-quote">
 <p>"Every one of these six failures has a single root cause: there is no trusted, sovereign, full-stack cloud built for Indian banking. Until now."</p>
-</div>
 </section>
 <section id="what-banks-actually-need" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="what-banks-actually-need"><span class="header-section-number">3.2</span> What Banks Actually Need</h2>
@@ -329,40 +305,39 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">RBI Data Localisation</td>
-<td style="text-align: left;"><span class="cross">✗</span> Hyperscalers non-compliant</td>
-<td style="text-align: left;"><span class="tick">✓</span> On Indian soil, always</td>
+<td style="text-align: left;">✗ Hyperscalers non-compliant</td>
+<td style="text-align: left;">✓ On Indian soil, always</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Auto-scaling for peaks</td>
-<td style="text-align: left;"><span class="cross">✗</span> Manual on legacy; expensive on cloud</td>
-<td style="text-align: left;"><span class="tick">✓</span> Predictive, automated, INR-priced</td>
+<td style="text-align: left;">✗ Manual on legacy; expensive on cloud</td>
+<td style="text-align: left;">✓ Predictive, automated, INR-priced</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">99.999% uptime</td>
-<td style="text-align: left;"><span class="cross">✗</span> Single-region, manual failover</td>
-<td style="text-align: left;"><span class="tick">✓</span> Active-active, auto-failover</td>
+<td style="text-align: left;">✗ Single-region, manual failover</td>
+<td style="text-align: left;">✓ Active-active, auto-failover</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Zero-downtime deployments</td>
-<td style="text-align: left;"><span class="cross">✗</span> Weekly batch, high-risk releases</td>
-<td style="text-align: left;"><span class="tick">✓</span> Automated blue-green, A/B tested</td>
+<td style="text-align: left;">✗ Weekly batch, high-risk releases</td>
+<td style="text-align: left;">✓ Automated blue-green, A/B tested</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Cost visibility &amp; control</td>
-<td style="text-align: left;"><span class="cross">✗</span> Opaque hyperscaler billing</td>
-<td style="text-align: left;"><span class="tick">✓</span> Per-merchant, per-service cost tracking</td>
+<td style="text-align: left;">✗ Opaque hyperscaler billing</td>
+<td style="text-align: left;">✓ Per-merchant, per-service cost tracking</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">UPI / Cards integration</td>
-<td style="text-align: left;"><span class="cross">✗</span> Custom integration required</td>
-<td style="text-align: left;"><span class="tick">✓</span> Pre-integrated, certified</td>
+<td style="text-align: left;">✗ Custom integration required</td>
+<td style="text-align: left;">✓ Pre-integrated, certified</td>
 </tr>
 </tbody>
 </table>
-</section>
-</section>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

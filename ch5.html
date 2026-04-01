@@ -229,15 +229,46 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#infraswitch-the-operations-brain" id="toc-infraswitch-the-operations-brain" class="nav-link active" data-scroll-target="#infraswitch-the-operations-brain"><span class="header-section-number">6.1</span> InfraSwitch — The Operations Brain</a>
+  <ul class="collapse">
+  <li><a href="#unified-dashboard" id="toc-unified-dashboard" class="nav-link" data-scroll-target="#unified-dashboard"><span class="header-section-number">6.1.1</span> 🎛️ Unified Dashboard</a></li>
+  <li><a href="#zero-downtime-releases" id="toc-zero-downtime-releases" class="nav-link" data-scroll-target="#zero-downtime-releases"><span class="header-section-number">6.1.2</span> 🔄 Zero-Downtime Releases</a></li>
+  <li><a href="#four-dimensional-rbac" id="toc-four-dimensional-rbac" class="nav-link" data-scroll-target="#four-dimensional-rbac"><span class="header-section-number">6.1.3</span> 🔒 Four-Dimensional RBAC</a></li>
+  <li><a href="#crash-safe-by-design" id="toc-crash-safe-by-design" class="nav-link" data-scroll-target="#crash-safe-by-design"><span class="header-section-number">6.1.4</span> 🛡️ Crash-Safe by Design</a></li>
+  <li><a href="#how-infraswitch-works" id="toc-how-infraswitch-works" class="nav-link" data-scroll-target="#how-infraswitch-works"><span class="header-section-number">6.1.5</span> How InfraSwitch Works</a></li>
+  </ul></li>
+  <li><a href="#namma-dsl-infrastructure-as-truth" id="toc-namma-dsl-infrastructure-as-truth" class="nav-link" data-scroll-target="#namma-dsl-infrastructure-as-truth"><span class="header-section-number">6.2</span> Namma DSL — Infrastructure as Truth</a>
+  <ul class="collapse">
+  <li><a href="#the-namma-dsl-workflow" id="toc-the-namma-dsl-workflow" class="nav-link" data-scroll-target="#the-namma-dsl-workflow"><span class="header-section-number">6.2.1</span> The Namma DSL Workflow</a></li>
+  </ul></li>
+  <li><a href="#autopilot-zero-impact-deployments" id="toc-autopilot-zero-impact-deployments" class="nav-link" data-scroll-target="#autopilot-zero-impact-deployments"><span class="header-section-number">6.3</span> Autopilot — Zero-Impact Deployments</a>
+  <ul class="collapse">
+  <li><a href="#blue-green-deployments" id="toc-blue-green-deployments" class="nav-link" data-scroll-target="#blue-green-deployments"><span class="header-section-number">6.3.1</span> 🟦🟩 Blue-Green Deployments</a></li>
+  <li><a href="#ab-statistical-testing" id="toc-ab-statistical-testing" class="nav-link" data-scroll-target="#ab-statistical-testing"><span class="header-section-number">6.3.2</span> 📊 A/B Statistical Testing</a></li>
+  <li><a href="#staggered-rollouts" id="toc-staggered-rollouts" class="nav-link" data-scroll-target="#staggered-rollouts"><span class="header-section-number">6.3.3</span> 🎯 Staggered Rollouts</a></li>
+  </ul></li>
+  <li><a href="#styrofoam-cost-capacity-intelligence" id="toc-styrofoam-cost-capacity-intelligence" class="nav-link" data-scroll-target="#styrofoam-cost-capacity-intelligence"><span class="header-section-number">6.4</span> Styrofoam — Cost &amp; Capacity Intelligence</a>
+  <ul class="collapse">
+  <li><a href="#predictive-scaling" id="toc-predictive-scaling" class="nav-link" data-scroll-target="#predictive-scaling"><span class="header-section-number">6.4.1</span> 📈 Predictive Scaling</a></li>
+  <li><a href="#wastage-detection" id="toc-wastage-detection" class="nav-link" data-scroll-target="#wastage-detection"><span class="header-section-number">6.4.2</span> 🗑️ Wastage Detection</a></li>
+  <li><a href="#cost-calculator" id="toc-cost-calculator" class="nav-link" data-scroll-target="#cost-calculator"><span class="header-section-number">6.4.3</span> 💳 Cost Calculator</a></li>
+  <li><a href="#ml-recommendations" id="toc-ml-recommendations" class="nav-link" data-scroll-target="#ml-recommendations"><span class="header-section-number">6.4.4</span> 🎯 ML Recommendations</a></li>
+  </ul></li>
+  <li><a href="#namma-observe-full-stack-visibility" id="toc-namma-observe-full-stack-visibility" class="nav-link" data-scroll-target="#namma-observe-full-stack-visibility"><span class="header-section-number">6.5</span> Namma Observe — Full-Stack Visibility</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch3.html">Part II — The Solution</a></li><li class="breadcrumb-item"><a href="./ch5.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Core Capabilities</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="core-capabilities" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Core Capabilities</span></span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Core Capabilities</span></h1>
 </div>
 
 
@@ -254,33 +285,28 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="ch5" class="chapter">
-<div class="chapter-num">
 <p>Chapter 5</p>
-</div>
 <p>Five purpose-built components form the heart of Namma Cloud. Each solves a distinct problem that banks face today. Together, they form a complete infrastructure operating system.</p>
 <section id="infraswitch-the-operations-brain" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="infraswitch-the-operations-brain"><span class="header-section-number">6.1</span> InfraSwitch — The Operations Brain</h2>
 <p>InfraSwitch is the central nervous system of Namma Cloud. Every infrastructure change — a deployment, a scaling event, a configuration update, an alert — flows through InfraSwitch's workflow engine.</p>
 <p>Built in Haskell with 722 source files, InfraSwitch manages <strong>142+ automated infrastructure workflows</strong> across Kubernetes, OpenStack, AWS (for hybrid setups), and GCP. It replaces the 10+ tools most banks use today with a single, unified command centre.</p>
-<div class="cards cards-2">
-<section id="unified-dashboard" class="level3 card" data-number="6.1.1">
+<section id="unified-dashboard" class="level3" data-number="6.1.1">
 <h3 data-number="6.1.1" class="anchored" data-anchor-id="unified-dashboard"><span class="header-section-number">6.1.1</span> 🎛️ Unified Dashboard</h3>
 <p>Single pane of glass for cluster setup, Kubernetes management, OpenStack operations, scaling, and configuration across all data centres.</p>
 </section>
-<section id="zero-downtime-releases" class="level3 card accent-navy" data-number="6.1.2">
+<section id="zero-downtime-releases" class="level3" data-number="6.1.2">
 <h3 data-number="6.1.2" class="anchored" data-anchor-id="zero-downtime-releases"><span class="header-section-number">6.1.2</span> 🔄 Zero-Downtime Releases</h3>
 <p>Blue-green deployments with automated A/B testing and staggered rollouts. Every change is monitored, with automatic rollback on anomaly detection.</p>
 </section>
-<section id="four-dimensional-rbac" class="level3 card accent-gold" data-number="6.1.3">
+<section id="four-dimensional-rbac" class="level3" data-number="6.1.3">
 <h3 data-number="6.1.3" class="anchored" data-anchor-id="four-dimensional-rbac"><span class="header-section-number">6.1.3</span> 🔒 Four-Dimensional RBAC</h3>
 <p>Role × Workflow × Resource Pattern × Cloud Provider — fine-grained access control with full audit trails for every infrastructure change.</p>
 </section>
-<section id="crash-safe-by-design" class="level3 card accent-green" data-number="6.1.4">
+<section id="crash-safe-by-design" class="level3" data-number="6.1.4">
 <h3 data-number="6.1.4" class="anchored" data-anchor-id="crash-safe-by-design"><span class="header-section-number">6.1.4</span> 🛡️ Crash-Safe by Design</h3>
 <p>Persistent poll-driven state machine. If a process dies mid-execution, the system resumes from the last checkpoint. At-least-once execution, always.</p>
 </section>
-</div>
 <section id="how-infraswitch-works" class="level3" data-number="6.1.5">
 <h3 data-number="6.1.5" class="anchored" data-anchor-id="how-infraswitch-works"><span class="header-section-number">6.1.5</span> How InfraSwitch Works</h3>
 <p>Every infrastructure operation in InfraSwitch is a <strong>workflow</strong> — a typed, auditable state machine that progresses through pre-check, execute, and validate phases:</p>
@@ -301,47 +327,15 @@ CREATED → IN_PROGRESS → UNDER_REVIEW → APPROVED
 <h2 data-number="6.2" class="anchored" data-anchor-id="namma-dsl-infrastructure-as-truth"><span class="header-section-number">6.2</span> Namma DSL — Infrastructure as Truth</h2>
 <p>Namma DSL is a Domain Specific Language built in Rust for declaring and managing datacenter infrastructure as code. Its founding philosophy: <strong>invalid infrastructure configurations should not compile.</strong></p>
 <p>This is not Infrastructure as Code in the Terraform sense. This is Infrastructure as Type-Safe Code — where the compiler enforces correctness before anything touches production. A misconfigured cable type, a rack capacity violation, an invalid CPU configuration — all caught at compile time.</p>
-<div class="layer-stack">
-<div class="layer layer-0">
-<div class="layer-badge">
 <p>Layer 0</p>
-</div>
-<div class="layer-content">
-<div class="layer-name">
 <p>Physical (Metal)</p>
-</div>
-<div class="layer-items">
 <p>Dell R740/R750, HPE DL385 servers · Arista 7050X3, Mellanox SN2700 switches · 42U racks with power budgets</p>
-</div>
-</div>
-</div>
-<div class="layer layer-1">
-<div class="layer-badge">
 <p>Layer 1</p>
-</div>
-<div class="layer-content">
-<div class="layer-name">
 <p>Operating System / Hosts</p>
-</div>
-<div class="layer-items">
 <p>Ubuntu / RHEL / Arista / SONiC · Network interface configuration · Zero-touch provisioning via MAAS / Redfish</p>
-</div>
-</div>
-</div>
-<div class="layer layer-2">
-<div class="layer-badge">
 <p>Layer 2</p>
-</div>
-<div class="layer-content">
-<div class="layer-name">
 <p>Services</p>
-</div>
-<div class="layer-items">
 <p>OpenStack control plane / compute · Ceph storage clusters · Kubernetes nodes · BGP routing (FRR)</p>
-</div>
-</div>
-</div>
-</div>
 <section id="the-namma-dsl-workflow" class="level3" data-number="6.2.1">
 <h3 data-number="6.2.1" class="anchored" data-anchor-id="the-namma-dsl-workflow"><span class="header-section-number">6.2.1</span> The Namma DSL Workflow</h3>
 <pre><code>-- Step 1: Declare desired state in Rust DSL
@@ -366,63 +360,48 @@ spec! {
 -- Step 3: diff(old_state, desired_state) → deterministic plan
 -- Step 4: InfraSwitch executes the plan
 -- Step 5: Observe and track reconciliation</code></pre>
-<div class="callout callout-style-simple callout-none no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div class="callout-title">
 <p>✅ Type Safety in Practice</p>
-</div>
 <p>If you try to connect an <code>RJ45Port</code> to an <code>Sfp28Cage</code>, the code won't compile. If you try to fill a 42U rack beyond its power budget, the code won't compile. If you try to deploy a routable network node without a configured host, the code won't compile. Every constraint in your datacenter design is enforced before a single command is run.</p>
-</div>
-</div>
-</div>
 <hr>
 </section>
 </section>
 <section id="autopilot-zero-impact-deployments" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="autopilot-zero-impact-deployments"><span class="header-section-number">6.3</span> Autopilot — Zero-Impact Deployments</h2>
 <p>Autopilot automates the riskiest moment in any software operation: the release. Using blue-green deployments, staggered rollouts, and integrated A/B testing, Autopilot makes every code change a non-event — even for critical payment services.</p>
-<div class="cards cards-3">
-<section id="blue-green-deployments" class="level3 card" data-number="6.3.1">
+<section id="blue-green-deployments" class="level3" data-number="6.3.1">
 <h3 data-number="6.3.1" class="anchored" data-anchor-id="blue-green-deployments"><span class="header-section-number">6.3.1</span> 🟦🟩 Blue-Green Deployments</h3>
 <p>Two identical environments. New version deployed to green while blue serves live traffic. Instant cutover. Instant rollback.</p>
 </section>
-<section id="ab-statistical-testing" class="level3 card accent-navy" data-number="6.3.2">
+<section id="ab-statistical-testing" class="level3" data-number="6.3.2">
 <h3 data-number="6.3.2" class="anchored" data-anchor-id="ab-statistical-testing"><span class="header-section-number">6.3.2</span> 📊 A/B Statistical Testing</h3>
 <p>Every release is monitored with binomial, Poisson, and t-test statistical engines. Releases that degrade metrics are automatically aborted before reaching full traffic.</p>
 </section>
-<section id="staggered-rollouts" class="level3 card accent-green" data-number="6.3.3">
+<section id="staggered-rollouts" class="level3" data-number="6.3.3">
 <h3 data-number="6.3.3" class="anchored" data-anchor-id="staggered-rollouts"><span class="header-section-number">6.3.3</span> 🎯 Staggered Rollouts</h3>
 <p>5% → 25% → 50% → 100%. Each stage monitored. Automated continue / warn / abort decisions. No human needed in the critical path.</p>
-</section>
-</div>
 <hr>
+</section>
 </section>
 <section id="styrofoam-cost-capacity-intelligence" class="level2" data-number="6.4">
 <h2 data-number="6.4" class="anchored" data-anchor-id="styrofoam-cost-capacity-intelligence"><span class="header-section-number">6.4</span> Styrofoam — Cost &amp; Capacity Intelligence</h2>
 <p>Styrofoam is Namma Cloud's predictive capacity planning and cost optimisation engine. It does what every bank wishes its cloud billing dashboard did: tell you in advance what you'll need, and tell you right now what you're wasting.</p>
-<div class="cards cards-2">
-<section id="predictive-scaling" class="level3 card" data-number="6.4.1">
+<section id="predictive-scaling" class="level3" data-number="6.4.1">
 <h3 data-number="6.4.1" class="anchored" data-anchor-id="predictive-scaling"><span class="header-section-number">6.4.1</span> 📈 Predictive Scaling</h3>
 <p>Uses time-series decomposition (trend + seasonality + residual) to forecast transaction patterns. Scales infrastructure before the load arrives, not after.</p>
 </section>
-<section id="wastage-detection" class="level3 card accent-gold" data-number="6.4.2">
+<section id="wastage-detection" class="level3" data-number="6.4.2">
 <h3 data-number="6.4.2" class="anchored" data-anchor-id="wastage-detection"><span class="header-section-number">6.4.2</span> 🗑️ Wastage Detection</h3>
 <p>Runs daily. Compares provisioned vs actual usage across EC2, RDS, ElastiCache, and bare metal. Flags over-provisioning with actionable right-sizing recommendations.</p>
 </section>
-<section id="cost-calculator" class="level3 card accent-navy" data-number="6.4.3">
+<section id="cost-calculator" class="level3" data-number="6.4.3">
 <h3 data-number="6.4.3" class="anchored" data-anchor-id="cost-calculator"><span class="header-section-number">6.4.3</span> 💳 Cost Calculator</h3>
 <p>Multi-cloud pricing engine supporting EC2, EBS, RDS, ElastiCache, Load Balancers, NAT Gateways. Compare AWS vs GCP vs Namma Cloud per workload.</p>
 </section>
-<section id="ml-recommendations" class="level3 card accent-green" data-number="6.4.4">
+<section id="ml-recommendations" class="level3" data-number="6.4.4">
 <h3 data-number="6.4.4" class="anchored" data-anchor-id="ml-recommendations"><span class="header-section-number">6.4.4</span> 🎯 ML Recommendations</h3>
 <p>Statistical analysis of p50/p95/p99 metrics with confidence scores. Detects growth trends. Recommends optimal resource sizes with safety headroom.</p>
-</section>
-</div>
 <hr>
+</section>
 </section>
 <section id="namma-observe-full-stack-visibility" class="level2" data-number="6.5">
 <h2 data-number="6.5" class="anchored" data-anchor-id="namma-observe-full-stack-visibility"><span class="header-section-number">6.5</span> Namma Observe — Full-Stack Visibility</h2>
@@ -435,10 +414,9 @@ spec! {
 <li><strong>Mobile Alerts (Jusping)</strong> — Firebase push notifications, critical alert sounds, per-alert mute/acknowledge. Your on-call engineer knows about issues before customers do.</li>
 <li><strong>Namma DB Tiering</strong> — Database storage tiered across SSD → HDD → Tape, with automated data promotion/demotion based on access patterns.</li>
 </ul>
-</section>
-</section>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -229,15 +229,22 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-strangler-fig-strategy" id="toc-the-strangler-fig-strategy" class="nav-link active" data-scroll-target="#the-strangler-fig-strategy"><span class="header-section-number">11.1</span> The Strangler Fig Strategy</a></li>
+  <li><a href="#what-the-bank-provides" id="toc-what-the-bank-provides" class="nav-link" data-scroll-target="#what-the-bank-provides"><span class="header-section-number">11.2</span> What the Bank Provides</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch10.html">Part IV — Journey</a></li><li class="breadcrumb-item"><a href="./ch10.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">The Migration Path</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="the-migration-path" class="quarto-section-identifier"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">The Migration Path</span></span></h1>
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">The Migration Path</span></h1>
 </div>
 
 
@@ -254,87 +261,32 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="ch10" class="chapter">
-<div class="chapter-num">
 <p>Chapter 10</p>
-</div>
 <p>Moving critical banking infrastructure is one of the highest-stakes projects a bank can undertake. Namma Cloud's migration approach is designed around one principle: zero disruption to production banking operations.</p>
 <section id="the-strangler-fig-strategy" class="level2" data-number="11.1">
 <h2 data-number="11.1" class="anchored" data-anchor-id="the-strangler-fig-strategy"><span class="header-section-number">11.1</span> The Strangler Fig Strategy</h2>
 <p>The strangler fig tree grows around its host, gradually taking its place — but never disrupting it. Namma Cloud's migration strategy follows the same pattern: grow the new system around the old one, validate at every step, and replace components only when the replacement is proven.</p>
 <p>This is not a big-bang migration. It is a systematic, phase-by-phase transition where the bank retains full operational capability throughout.</p>
-<div class="phases">
-<div class="phase">
-<div class="phase-num">
 <p>01</p>
-</div>
-<div class="phase-body">
-<div class="phase-title">
 <p>Foundation</p>
-</div>
-<div class="phase-dur">
 <p>Months 1–3</p>
-</div>
 <p>Physical DC setup, Namma DSL baseline declaration, network and storage commissioning. Zero-touch provisioning. OpenBao secret management deployed. InfraSwitch connected to the new environment. No production traffic moved yet.</p>
-</div>
-</div>
-<div class="phase">
-<div class="phase-num">
 <p>02</p>
-</div>
-<div class="phase-body">
-<div class="phase-title">
 <p>Observability Layer</p>
-</div>
-<div class="phase-dur">
 <p>Months 2–5 (overlapping)</p>
-</div>
 <p>Namma Observe deployed to monitor both the existing infrastructure and the new Namma Cloud environment. Anomaly detection baselines established. Alert consolidation — one Slack channel, one mobile app, one dashboard. Shadow mode: Namma Cloud receives traffic but does not process it yet.</p>
-</div>
-</div>
-<div class="phase">
-<div class="phase-num">
 <p>03</p>
-</div>
-<div class="phase-body">
-<div class="phase-title">
 <p>Non-Critical Workload Migration</p>
-</div>
-<div class="phase-dur">
 <p>Months 4–8</p>
-</div>
 <p>Non-critical workloads — analytics, batch processing, reporting, internal tools — migrated first. Autopilot blue-green deployments. Styrofoam validates cost projections against actuals. Team builds operational muscle before touching production payments.</p>
-</div>
-</div>
-<div class="phase">
-<div class="phase-num">
 <p>04</p>
-</div>
-<div class="phase-body">
-<div class="phase-title">
 <p>Payment Stack Migration</p>
-</div>
-<div class="phase-dur">
 <p>Months 8–12</p>
-</div>
 <p>UPI, cards, and netbanking workloads migrated with parallel-run strategy. Namma Cloud receives shadow traffic, results compared in real time. Staggered cutover: 5% → 25% → 50% → 100% with A/B statistical validation at each stage. Rollback available at any point.</p>
-</div>
-</div>
-<div class="phase">
-<div class="phase-num">
 <p>05</p>
-</div>
-<div class="phase-body">
-<div class="phase-title">
 <p>Full Sovereignty</p>
-</div>
-<div class="phase-dur">
 <p>Months 12–18</p>
-</div>
 <p>Complete exit from commercial hyperscalers. All data on Indian sovereign infrastructure. Single pane of glass for all operations. Namma DB tiering in production. Full Juspay product integration live. Hyperscaler contracts terminated.</p>
-</div>
-</div>
-</div>
 </section>
 <section id="what-the-bank-provides" class="level2" data-number="11.2">
 <h2 data-number="11.2" class="anchored" data-anchor-id="what-the-bank-provides"><span class="header-section-number">11.2</span> What the Bank Provides</h2>
@@ -346,23 +298,11 @@ ul.task-list li input[type="checkbox"] {
 <li>Business sign-off on cutover windows for each workload</li>
 <li>Regulatory liaison for any approvals required from RBI/NPCI</li>
 </ul>
-<div class="callout callout-style-simple callout-none no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div class="callout-title">
 <p>✅ Juspay's Commitment</p>
-</div>
 <p>Juspay provides the full stack: hardware procurement and commissioning, Namma DSL declaration, network design, OpenStack/Ceph/Kubernetes deployment, migration tooling, parallel-run monitoring, cutover execution, and ongoing operations support. The bank's engineers are observers and approvers — not implementors.</p>
-</div>
-</div>
-</div>
-</section>
-</section>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

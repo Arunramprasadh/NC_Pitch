@@ -229,15 +229,24 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#every-compliance-requirement-addressed" id="toc-every-compliance-requirement-addressed" class="nav-link active" data-scroll-target="#every-compliance-requirement-addressed"><span class="header-section-number">8.1</span> Every Compliance Requirement, Addressed</a></li>
+  <li><a href="#secret-management-openbao-imds" id="toc-secret-management-openbao-imds" class="nav-link" data-scroll-target="#secret-management-openbao-imds"><span class="header-section-number">8.2</span> Secret Management: OpenBao + IMDS</a></li>
+  <li><a href="#zero-touch-provisioning" id="toc-zero-touch-provisioning" class="nav-link" data-scroll-target="#zero-touch-provisioning"><span class="header-section-number">8.3</span> Zero Touch Provisioning</a></li>
+  <li><a href="#the-air-gap-option" id="toc-the-air-gap-option" class="nav-link" data-scroll-target="#the-air-gap-option"><span class="header-section-number">8.4</span> The Air-Gap Option</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch6.html">Part III — Deep Dive</a></li><li class="breadcrumb-item"><a href="./ch7.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Compliance &amp; Sovereignty</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="compliance-sovereignty" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Compliance &amp; Sovereignty</span></span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Compliance &amp; Sovereignty</span></h1>
 </div>
 
 
@@ -254,10 +263,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="ch7" class="chapter">
-<div class="chapter-num">
 <p>Chapter 7</p>
-</div>
 <p>Namma Cloud is the only full-stack cloud infrastructure that is natively built for Indian banking compliance — not retrofitted, not partially compliant, not "working with regulators." Compliant by architecture.</p>
 <section id="every-compliance-requirement-addressed" class="level2" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="every-compliance-requirement-addressed"><span class="header-section-number">8.1</span> Every Compliance Requirement, Addressed</h2>
@@ -307,19 +313,8 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="8.2" class="anchored" data-anchor-id="secret-management-openbao-imds"><span class="header-section-number">8.2</span> Secret Management: OpenBao + IMDS</h2>
 <p>One of the most common — and most dangerous — security anti-patterns in cloud infrastructure is storing credentials on disk or in environment variables. Every bank that has had a credential leak knows this cost.</p>
 <p>Namma Cloud uses <strong>OpenBao</strong> (an open-source, auditable fork of HashiCorp Vault) combined with <strong>IMDS (Instance Metadata Service)</strong> for secure VM secret access. No credentials ever touch disk. Secrets are fetched at runtime via instance identity, with full audit trails.</p>
-<div class="callout callout-style-simple callout-none no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div class="callout-title">
 <p>🔐 How It Works</p>
-</div>
 <p>A VM that needs a database password does not have the password in its config file. Instead, it presents its IMDS-provided identity token to OpenBao, which validates the identity and returns the secret — temporarily, with an expiry. The secret is never stored. The identity is unforgeable. The audit trail is complete.</p>
-</div>
-</div>
-</div>
 </section>
 <section id="zero-touch-provisioning" class="level2" data-number="8.3">
 <h2 data-number="8.3" class="anchored" data-anchor-id="zero-touch-provisioning"><span class="header-section-number">8.3</span> Zero Touch Provisioning</h2>
@@ -337,10 +332,9 @@ ul.task-list li input[type="checkbox"] {
 <section id="the-air-gap-option" class="level2" data-number="8.4">
 <h2 data-number="8.4" class="anchored" data-anchor-id="the-air-gap-option"><span class="header-section-number">8.4</span> The Air-Gap Option</h2>
 <p>For banks that require complete network isolation for their most sensitive workloads — core banking, RTGS, NEFT infrastructure — Namma Cloud supports fully air-gapped cluster operation. No mandatory internet dependency. No telemetry leaving the premises. Full operational capability in an isolated environment.</p>
-</section>
-</section>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

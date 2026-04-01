@@ -229,15 +229,32 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-total-cost-of-cloud" id="toc-the-total-cost-of-cloud" class="nav-link active" data-scroll-target="#the-total-cost-of-cloud"><span class="header-section-number">9.1</span> The Total Cost of Cloud</a>
+  <ul class="collapse">
+  <li><a href="#illustrative-cost-index-current-hyperscaler-100" id="toc-illustrative-cost-index-current-hyperscaler-100" class="nav-link" data-scroll-target="#illustrative-cost-index-current-hyperscaler-100"><span class="header-section-number">9.1.1</span> Illustrative Cost Index (Current Hyperscaler = 100)</a></li>
+  </ul></li>
+  <li><a href="#where-the-savings-come-from" id="toc-where-the-savings-come-from" class="nav-link" data-scroll-target="#where-the-savings-come-from"><span class="header-section-number">9.2</span> Where the Savings Come From</a>
+  <ul class="collapse">
+  <li><a href="#no-fx-risk" id="toc-no-fx-risk" class="nav-link" data-scroll-target="#no-fx-risk"><span class="header-section-number">9.2.1</span> 💱 No FX Risk</a></li>
+  <li><a href="#namma-db-tiering" id="toc-namma-db-tiering" class="nav-link" data-scroll-target="#namma-db-tiering"><span class="header-section-number">9.2.2</span> 🗄️ Namma DB Tiering</a></li>
+  <li><a href="#styrofoam-savings" id="toc-styrofoam-savings" class="nav-link" data-scroll-target="#styrofoam-savings"><span class="header-section-number">9.2.3</span> 🔍 Styrofoam Savings</a></li>
+  <li><a href="#included-services" id="toc-included-services" class="nav-link" data-scroll-target="#included-services"><span class="header-section-number">9.2.4</span> 📦 Included Services</a></li>
+  </ul></li>
+  <li><a href="#namma-db-tiering-the-storage-revolution" id="toc-namma-db-tiering-the-storage-revolution" class="nav-link" data-scroll-target="#namma-db-tiering-the-storage-revolution"><span class="header-section-number">9.3</span> Namma DB Tiering: The Storage Revolution</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch6.html">Part III — Deep Dive</a></li><li class="breadcrumb-item"><a href="./ch8.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Cost Economics</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="cost-economics" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Cost Economics</span></span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Cost Economics</span></h1>
 </div>
 
 
@@ -254,10 +271,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="ch8" class="chapter">
-<div class="chapter-num">
 <p>Chapter 8</p>
-</div>
 <p>The business case for Namma Cloud is not just regulatory compliance. It is a dramatically better cost structure — with better performance, better visibility, and no FX risk.</p>
 <section id="the-total-cost-of-cloud" class="level2" data-number="9.1">
 <h2 data-number="9.1" class="anchored" data-anchor-id="the-total-cost-of-cloud"><span class="header-section-number">9.1</span> The Total Cost of Cloud</h2>
@@ -265,61 +279,33 @@ ul.task-list li input[type="checkbox"] {
 <p>When you add up all of these, the cost of running critical banking workloads on AWS or GCP is significantly higher than the headline compute prices suggest — and it rises every year.</p>
 <section id="illustrative-cost-index-current-hyperscaler-100" class="level3" data-number="9.1.1">
 <h3 data-number="9.1.1" class="anchored" data-anchor-id="illustrative-cost-index-current-hyperscaler-100"><span class="header-section-number">9.1.1</span> Illustrative Cost Index (Current Hyperscaler = 100)</h3>
-<div class="cost-bars">
-<div class="cost-bar-row">
-<div class="cost-bar-label">
 <p>AWS / GCP Today Index: 100</p>
-</div>
-<div class="cost-bar-track">
-<div class="cost-bar-fill bar-aws">
 <p>Baseline — dollar-denominated, FX-exposed, compliance non-trivial</p>
-</div>
-</div>
-</div>
-<div class="cost-bar-row">
-<div class="cost-bar-label">
 <p>Namma Cloud — Year 1 Index: ~55</p>
-</div>
-<div class="cost-bar-track">
-<div class="cost-bar-fill bar-nc1">
 <p>~45% lower TCO from year one</p>
-</div>
-</div>
-</div>
-<div class="cost-bar-row">
-<div class="cost-bar-label">
 <p>Namma Cloud — Year 3 Index: ~35</p>
-</div>
-<div class="cost-bar-track">
-<div class="cost-bar-fill bar-nc3">
 <p>~65% lower TCO at steady state</p>
-</div>
-</div>
-</div>
-</div>
 <p><em>Illustrative cost index. Actual savings depend on workload profile, current infrastructure, and migration scope.</em></p>
 </section>
 </section>
 <section id="where-the-savings-come-from" class="level2" data-number="9.2">
 <h2 data-number="9.2" class="anchored" data-anchor-id="where-the-savings-come-from"><span class="header-section-number">9.2</span> Where the Savings Come From</h2>
-<div class="cards cards-2">
-<section id="no-fx-risk" class="level3 card" data-number="9.2.1">
+<section id="no-fx-risk" class="level3" data-number="9.2.1">
 <h3 data-number="9.2.1" class="anchored" data-anchor-id="no-fx-risk"><span class="header-section-number">9.2.1</span> 💱 No FX Risk</h3>
 <p>INR-denominated pricing. No exposure to dollar fluctuations. No global tariff-driven cost increases. Your infrastructure budget is predictable.</p>
 </section>
-<section id="namma-db-tiering" class="level3 card accent-navy" data-number="9.2.2">
+<section id="namma-db-tiering" class="level3" data-number="9.2.2">
 <h3 data-number="9.2.2" class="anchored" data-anchor-id="namma-db-tiering"><span class="header-section-number">9.2.2</span> 🗄️ Namma DB Tiering</h3>
 <p>Databases split across SSD → HDD → Tape based on access frequency. Storage costs drop 60–80% versus managed cloud databases without any performance impact on hot data.</p>
 </section>
-<section id="styrofoam-savings" class="level3 card accent-gold" data-number="9.2.3">
+<section id="styrofoam-savings" class="level3" data-number="9.2.3">
 <h3 data-number="9.2.3" class="anchored" data-anchor-id="styrofoam-savings"><span class="header-section-number">9.2.3</span> 🔍 Styrofoam Savings</h3>
 <p>Daily wastage detection and ML-based right-sizing recommendations reduce infrastructure spend by 20–40%. Most banks provision for peak and forget.</p>
 </section>
-<section id="included-services" class="level3 card accent-green" data-number="9.2.4">
+<section id="included-services" class="level3" data-number="9.2.4">
 <h3 data-number="9.2.4" class="anchored" data-anchor-id="included-services"><span class="header-section-number">9.2.4</span> 📦 Included Services</h3>
 <p>Monitoring, CI/CD, secrets management, networking, load balancing — all included. No per-feature surcharges. No egress fees between zones.</p>
 </section>
-</div>
 </section>
 <section id="namma-db-tiering-the-storage-revolution" class="level2" data-number="9.3">
 <h2 data-number="9.3" class="anchored" data-anchor-id="namma-db-tiering-the-storage-revolution"><span class="header-section-number">9.3</span> Namma DB Tiering: The Storage Revolution</h2>
@@ -336,23 +322,11 @@ Warm Tier (SATA HDD)  — 30 days to 7 years of data
 Cold Tier (Tape/S3)  — 7+ years of archived data
                         Legal hold, SEBI/RBI archive requirements
                         Seconds retrieval, 1/20th the cost</code></pre>
-<div class="callout callout-style-simple callout-none no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div class="callout-title">
 <p>💡 The Economics</p>
-</div>
 <p>A bank storing 100TB of historical transaction data on managed RDS today pays approximately ₹2–3 Cr/month. The same data on Namma DB tiering costs ₹25–40L/month — a 75–85% reduction — with identical compliance and retrieval SLAs.</p>
-</div>
-</div>
-</div>
-</section>
-</section>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

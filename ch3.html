@@ -229,15 +229,23 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#we-built-indias-payments-stack" id="toc-we-built-indias-payments-stack" class="nav-link active" data-scroll-target="#we-built-indias-payments-stack"><span class="header-section-number">4.1</span> We Built India's Payments Stack</a></li>
+  <li><a href="#scale-that-demands-infrastructure-mastery" id="toc-scale-that-demands-infrastructure-mastery" class="nav-link" data-scroll-target="#scale-that-demands-infrastructure-mastery"><span class="header-section-number">4.2</span> Scale That Demands Infrastructure Mastery</a></li>
+  <li><a href="#we-know-what-you-dont-know-you-need" id="toc-we-know-what-you-dont-know-you-need" class="nav-link" data-scroll-target="#we-know-what-you-dont-know-you-need"><span class="header-section-number">4.3</span> We Know What You Don't Know You Need</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch3.html">Part II — The Solution</a></li><li class="breadcrumb-item"><a href="./ch3.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Why Juspay</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="why-juspay" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Why Juspay</span></span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Why Juspay</span></h1>
 </div>
 
 
@@ -254,122 +262,47 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="ch3" class="chapter">
-<div class="chapter-num">
 <p>Chapter 3</p>
-</div>
 <p>Building a cloud for banks requires two things most infrastructure companies don't have: deep banking domain knowledge and battle-tested reliability at national scale. Juspay has both.</p>
 <section id="we-built-indias-payments-stack" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="we-built-indias-payments-stack"><span class="header-section-number">4.1</span> We Built India's Payments Stack</h2>
 <p>Juspay did not enter the payments space as a gateway or aggregator. We entered as infrastructure builders. Our work sits beneath the apps, beneath the banks, at the layer where reliability is not a feature — it is the product.</p>
-<div class="timeline">
-<div class="tl-item">
-<div class="tl-dot">
 <p>2012</p>
-</div>
-<div class="tl-body">
-<div class="tl-title">
 <p>India's First OTP Auto-Read SDK</p>
-</div>
 <p>Juspay Safe SDK — the first SDK to auto-read OTPs for mobile payments, reducing friction for 300 million mobile banking users.</p>
-</div>
-</div>
-<div class="tl-item">
-<div class="tl-dot">
 <p>2016</p>
-</div>
-<div class="tl-body">
-<div class="tl-title">
 <p>Built BHIM and the Core UPI Library</p>
-</div>
 <p>Designed and built the BHIM app and the core UPI 2FA SDK — the foundation of India's real-time payments revolution.</p>
-</div>
-</div>
-<div class="tl-item">
-<div class="tl-dot">
 <p>2017</p>
-</div>
-<div class="tl-body">
-<div class="tl-title">
 <p>First In-App UPI Experience</p>
-</div>
 <p>UPI TPAP SDK — the first solution to bring a seamless in-app UPI experience, eliminating app-switching dropouts.</p>
-</div>
-</div>
-<div class="tl-item">
-<div class="tl-dot">
 <p>2020</p>
-</div>
-<div class="tl-body">
-<div class="tl-title">
 <p>India's First UPI PSP on Cloud</p>
-</div>
 <p>Built the first cloud-native UPI PSP for banks, delivering better performance and reliability than legacy on-premise deployments.</p>
-</div>
-</div>
-<div class="tl-item">
-<div class="tl-dot">
 <p>2021</p>
-</div>
-<div class="tl-body">
-<div class="tl-title">
 <p>Designed UPI Lite</p>
-</div>
 <p>Designed and developed small-value payments without UPI PIN — extending the reach of digital payments to India's next 500 million.</p>
-</div>
-</div>
-<div class="tl-item">
-<div class="tl-dot">
 <p>2023</p>
-</div>
-<div class="tl-body">
-<div class="tl-title">
 <p>UPI Plug-in SDK for 1-Click Payments</p>
-</div>
 <p>The UPI Plug-in SDK powers instant, in-context payments for 400+ merchants — without any effort from the bank or merchant.</p>
-</div>
-</div>
-</div>
 </section>
 <section id="scale-that-demands-infrastructure-mastery" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="scale-that-demands-infrastructure-mastery"><span class="header-section-number">4.2</span> Scale That Demands Infrastructure Mastery</h2>
 <p>Juspay does not operate at startup scale. We operate at national infrastructure scale. The demands of processing $1 trillion in annualised transaction value — reliably, at millisecond latency, with zero technical declines — forced us to build infrastructure capability that no third-party cloud could deliver.</p>
-<div class="stats-row">
-<div class="stat-block">
-<p><span class="big">$1 Tn+</span> <span class="small">Annualised Transaction Value</span></p>
-</div>
-<div class="stat-block">
-<p><span class="big">300 Mn+</span> <span class="small">Transactions Processed Daily</span></p>
-</div>
-<div class="stat-block">
-<p><span class="big">2.5 Bn+</span> <span class="small">SDK Installs Globally</span></p>
-</div>
-<div class="stat-block">
-<p><span class="big">500+</span> <span class="small">Enterprise Banks &amp; Merchants</span></p>
-</div>
-</div>
+<p>$1 Tn+ Annualised Transaction Value</p>
+<p>300 Mn+ Transactions Processed Daily</p>
+<p>2.5 Bn+ SDK Installs Globally</p>
+<p>500+ Enterprise Banks &amp; Merchants</p>
 </section>
 <section id="we-know-what-you-dont-know-you-need" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="we-know-what-you-dont-know-you-need"><span class="header-section-number">4.3</span> We Know What You Don't Know You Need</h2>
 <p>A traditional cloud provider builds infrastructure for generic workloads. Juspay builds infrastructure that has processed every edge case in Indian banking — salary runs on the 1st of every month, GST filing surges, IPO subscription windows, RBI system maintenance windows, NPCI outages, and more.</p>
 <p>Our infrastructure was not designed in a lab. It was designed under fire — 300 million transactions a day, with a bank's reputation on the line for each one.</p>
-<div class="callout callout-style-simple callout-none no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div class="callout-title">
 <p>✅ The Juspay Advantage</p>
-</div>
 <p>We are the only cloud provider that has operated at the intersection of Indian banking, NPCI infrastructure, and cloud-native engineering at national scale. Namma Cloud is not a product we built for banks — it is the infrastructure we built to survive building for banks.</p>
-</div>
-</div>
-</div>
-</section>
-</section>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

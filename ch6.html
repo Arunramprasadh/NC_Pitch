@@ -229,15 +229,26 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-ten-tenets" id="toc-the-ten-tenets" class="nav-link active" data-scroll-target="#the-ten-tenets"><span class="header-section-number">7.1</span> The Ten Tenets</a></li>
+  <li><a href="#the-yin-and-yang-of-reliability" id="toc-the-yin-and-yang-of-reliability" class="nav-link" data-scroll-target="#the-yin-and-yang-of-reliability"><span class="header-section-number">7.2</span> The Yin and Yang of Reliability</a>
+  <ul class="collapse">
+  <li><a href="#critical-path-yin" id="toc-critical-path-yin" class="nav-link" data-scroll-target="#critical-path-yin"><span class="header-section-number">7.2.1</span> ⚫ Critical Path (Yin)</a></li>
+  <li><a href="#abundance-side-yang" id="toc-abundance-side-yang" class="nav-link" data-scroll-target="#abundance-side-yang"><span class="header-section-number">7.2.2</span> ⚪ Abundance Side (Yang)</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch6.html">Part III — Deep Dive</a></li><li class="breadcrumb-item"><a href="./ch6.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Reliability by Design</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="reliability-by-design" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Reliability by Design</span></span></h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Reliability by Design</span></h1>
 </div>
 
 
@@ -254,141 +265,72 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="ch6" class="chapter">
-<div class="chapter-num">
 <p>Chapter 6</p>
-</div>
 <p>99.999% availability is not an aspiration at Juspay — it is an engineering requirement. Every architectural decision in Namma Cloud is made through the lens of: "What happens when this fails?"</p>
 <section id="the-ten-tenets" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="the-ten-tenets"><span class="header-section-number">7.1</span> The Ten Tenets</h2>
 <p>Juspay's Reliability Principles are not a marketing document. They are the operating philosophy that governs every infrastructure decision, every deployment, and every incident response.</p>
-<div class="principles">
-<div class="principle">
 <div>
-<div class="principle-title">
 <p>Abundant Redundancy, Active-Active, Instant Failover</p>
-</div>
 <p>No single point of failure at any layer. Every critical component has a symmetric redundant counterpart, actively processing requests. Failover is instant and automatic.</p>
 </div>
-</div>
-<div class="principle">
 <div>
-<div class="principle-title">
 <p>Critical Path — 100X Strong, Utterly Simple</p>
-</div>
 <p>The critical path (payment processing, UPI routing, authentication) must be impossibly simple and impossibly strong. Complexity is the enemy of reliability.</p>
 </div>
-</div>
-<div class="principle">
 <div>
-<div class="principle-title">
 <p>Reduce Blast Radius</p>
-</div>
 <p>Failures should be contained. Merchant-level sharding, namespace-level isolation, circuit breakers between services — every boundary limits the damage of any single failure.</p>
 </div>
-</div>
-<div class="principle">
 <div>
-<div class="principle-title">
 <p>Auto Anomaly Detection, Auto RCA</p>
-</div>
 <p>Failures should be detected and diagnosed before humans are paged. Shifu and Shifu-2.0 provide millisecond anomaly detection and automated root cause analysis.</p>
 </div>
-</div>
-<div class="principle">
 <div>
-<div class="principle-title">
 <p>Dynamic Model-Based Capacity Allocation</p>
-</div>
 <p>Capacity must be allocated based on traffic models, not historical averages. Styrofoam ensures zero bottlenecks by predicting demand and provisioning ahead of it.</p>
 </div>
-</div>
-<div class="principle">
 <div>
-<div class="principle-title">
 <p>Mandatory Staggering, A/B Testing &amp; Rollback for All Changes</p>
-</div>
 <p>No change — code, config, or infrastructure — goes directly to 100% of traffic. Every change is staggered, monitored, and ready to roll back in seconds.</p>
 </div>
-</div>
-<div class="principle">
 <div>
-<div class="principle-title">
 <p>Testing the Limits — Load, Failure, Chaos Tests in Production</p>
-</div>
 <p>We chaos test in production. Load tests validate scale claims. Failure injection tests validate failover assumptions. We test limits before customers find them.</p>
 </div>
-</div>
-<div class="principle">
 <div>
-<div class="principle-title">
 <p>RCA/CoE Process Done with Rigour</p>
-</div>
 <p>Every incident is a Root Cause Analysis. Every RCA is a Culture of Excellence opportunity. No incident is closed without a systemic fix in the critical path.</p>
 </div>
-</div>
-<div class="principle">
 <div>
-<div class="principle-title">
 <p>Set Ambitious SLAs/SLOs — Constantly Improve</p>
-</div>
 <p>99.999% is not a target we declare on slides. It is an SLO we measure in dashboards, review in post-mortems, and improve every quarter.</p>
 </div>
-</div>
-<div class="principle">
 <div>
-<div class="principle-title">
 <p>Org-Wide Collective Ownership</p>
-</div>
 <p>Reliability is not the SRE team's problem. It is every engineer's problem, every product manager's problem, every CXO's problem. The culture reinforces it daily.</p>
-</div>
-</div>
 </div>
 </section>
 <section id="the-yin-and-yang-of-reliability" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="the-yin-and-yang-of-reliability"><span class="header-section-number">7.2</span> The Yin and Yang of Reliability</h2>
 <p>Juspay's reliability philosophy recognises a fundamental tension in distributed systems: the same properties that make a system flexible and scalable (decentralisation, diversity, complexity) are the properties that make it fragile. Reliability requires holding both sides simultaneously.</p>
-<div class="cards cards-2">
-<section id="critical-path-yin" class="level3 card accent-navy" data-number="7.2.1">
+<section id="critical-path-yin" class="level3" data-number="7.2.1">
 <h3 data-number="7.2.1" class="anchored" data-anchor-id="critical-path-yin"><span class="header-section-number">7.2.1</span> ⚫ Critical Path (Yin)</h3>
 <p>Unified · Centralised · Simple · Stable · Certain · Very Strong. The critical path — failover switches, load balancers, rate limiters, authentication — must be narrow, strong, and never fail.</p>
 </section>
-<section id="abundance-side-yang" class="level3 card" data-number="7.2.2">
+<section id="abundance-side-yang" class="level3" data-number="7.2.2">
 <h3 data-number="7.2.2" class="anchored" data-anchor-id="abundance-side-yang"><span class="header-section-number">7.2.2</span> ⚪ Abundance Side (Yang)</h3>
 <p>Diversity · Redundancy · Distribution · Decentralisation · Complexity · Possibility. The system's resilience comes from abundant redundancy outside the critical path.</p>
-</section>
-</div>
-<div class="callout callout-style-simple callout-none no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div class="callout-title">
 <p>💡 The Golden Rule</p>
-</div>
 <p>Every RCA must ask: "Why did the critical path not catch this?" If the CP caught it, it was handled. If it didn't, the CP needs to be strengthened. This recursive improvement loop is why Juspay's uptime keeps improving.</p>
-</div>
-</div>
-</div>
-<div class="stats-row">
-<div class="stat-block">
-<p><span class="big">99.999%</span> <span class="small">Target Uptime SLA</span></p>
-</div>
-<div class="stat-block">
-<p><span class="big">&lt;100ms</span> <span class="small">Transaction Latency</span></p>
-</div>
-<div class="stat-block">
-<p><span class="big">50,000+</span> <span class="small">TPS Tested Capacity</span></p>
-</div>
-<div class="stat-block">
-<p><span class="big">0%</span> <span class="small">Technical Declines</span></p>
-</div>
-</div>
-</section>
-</section>
+<p>99.999% Target Uptime SLA</p>
+<p>&lt;100ms Transaction Latency</p>
+<p>50,000+ TPS Tested Capacity</p>
+<p>0% Technical Declines</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
