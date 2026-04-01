@@ -1,9 +1,6 @@
-:::::::::::::::::::::::::::::::::::: {#ch4 .section .chapter}
-::: chapter-num
 Chapter 4
-:::
 
-# Introducing Namma Cloud {#introducing-namma-cloud .chapter-title}
+# Introducing Namma Cloud
 
 Namma Cloud is a fully sovereign, AI-powered, end-to-end cloud infrastructure platform built exclusively for Indian banks. It is on par with --- and in critical ways better than --- AWS, GCP, and Azure.
 
@@ -11,126 +8,61 @@ Namma Cloud is a fully sovereign, AI-powered, end-to-end cloud infrastructure pl
 
 Most cloud infrastructure offerings solve one layer. A hardware colocation. A managed Kubernetes service. A monitoring tool. Namma Cloud solves the entire stack --- from physical servers to running applications --- and every layer is designed to work with every other layer.
 
-::::::::::::::::::::::: layer-stack
-::::::: {.layer .layer-3}
-::: layer-badge
 Layer 4
-:::
 
-::::: layer-content
-::: layer-name
 Juspay Banking Products
-:::
 
-::: layer-items
 UPI Stack · Cards PG · Orchestrator · FASTag · IBMB · JusTrust · BBPS
-:::
-:::::
-:::::::
 
-::::::: {.layer .layer-2}
-::: layer-badge
 Layer 3
-:::
 
-::::: layer-content
-::: layer-name
 Namma Cloud Platform
-:::
 
-::: layer-items
 InfraSwitch · Autopilot · Styrofoam · Namma Observe · Namma DB
-:::
-:::::
-:::::::
 
-::::::: {.layer .layer-1}
-::: layer-badge
 Layer 2
-:::
 
-::::: layer-content
-::: layer-name
 Compute, Storage & Orchestration
-:::
 
-::: layer-items
 OpenStack · Ceph · Kubernetes · Containers · Object Storage
-:::
-:::::
-:::::::
 
-::::::: {.layer .layer-0}
-::: layer-badge
 Layer 1
-:::
 
-::::: layer-content
-::: layer-name
 Physical Infrastructure
-:::
 
-::: layer-items
 Dell/HPE Servers · Arista/Mellanox Networking · CtrlS Mumbai/Hyderabad · Sify · NxtGen
-:::
-:::::
-:::::::
-:::::::::::::::::::::::
 
 ## What Makes It Different
 
-::::::::::: {.cards .cards-2}
-:::: card
-::: card-icon
 🇮🇳
-:::
 
 ### Sovereign by Architecture
 
 Every component --- hardware, software, networking, data --- is designed to stay within Indian borders. No foreign dependencies in the critical path.
-::::
 
-:::: {.card .accent-navy}
-::: card-icon
 🧠
-:::
 
 ### AI-Accelerated Engineering
 
 We leverage AI to compress years of infrastructure development into months. Namma DSL, automated provisioning, ML-based anomaly detection --- all AI-enabled.
-::::
 
-:::: {.card .accent-green}
-::: card-icon
 🔌
-:::
 
 ### Banking-Native Integration
 
 Pre-integrated with NPCI, RBI reporting, UPI networks. No custom integration work needed for Juspay banking products --- they run natively on Namma Cloud.
-::::
 
-:::: {.card .accent-gold}
-::: card-icon
 💰
-:::
 
 ### INR Economics
 
 Priced in INR. No FX exposure. Cost structure follows actual compute economics, not hyperscaler margin expansion. Styrofoam catches wastage in real time.
-::::
-:::::::::::
 
 ## The Multi-DC Architecture
 
 Namma Cloud operates across multiple Tier-4 data centres in India in an active-active configuration. No single point of failure. Instant failover. Zero downtime for region-level events.
 
-:::: {.callout .callout-note}
-::: callout-title
 🏢 Data Centre Footprint
-:::
 
 **CtrlS Mumbai** · **CtrlS Hyderabad** · **Sify Technologies** · **NxtGen Datacenter**\
 All Tier-3/4 certified. All within India. All active-active --- traffic routes to all regions simultaneously, resources are fully utilised, failover is instant.
-::::
-::::::::::::::::::::::::::::::::::::

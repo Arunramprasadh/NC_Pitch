@@ -1,44 +1,27 @@
-::::::::::::::::: {#cover .section}
-::::::::::: chapter-hero
-:::::::::: hero-inner
-::: hero-eyebrow
 A Pitch for India\'s Banking Future
-:::
 
-# Namma Cloud {#namma-cloud .hero-title}
+# Namma Cloud
 
 India\'s sovereign, full-stack cloud infrastructure platform --- built exclusively for banks, compliant by design, and powered by the team that built India\'s payments.
 
-:::::::: hero-stats
-::: stat-pill
-[\$1 Tn+]{.val}[Annualised TPV]{.lbl}
-:::
 
-::: stat-pill
-[300 Mn+]{.val}[Transactions/Day]{.lbl}
-:::
+- [\$1 Tn+]
 
-::: stat-pill
-[99.999%]{.val}[Uptime Target]{.lbl}
-:::
 
-::: stat-pill
-[10,000+]{.val}[Peak TPS]{.lbl}
-:::
+- [300 Mn+]
 
-::: stat-pill
-[0%]{.val}[Technical Declines]{.lbl}
-:::
-::::::::
-::::::::::
-:::::::::::
 
-::::::: chapter
-::: chapter-num
-Foreword
-:::
+- [99.999%]
 
-# Why This Book Exists {#why-this-book-exists .chapter-title}
+
+- [10,000+] 
+
+
+- [0%] [Technical Declines]
+
+
+
+# Forword
 
 The infrastructure that powers Indian banking was never designed for what banking has become. This book is about fixing that --- permanently.
 
@@ -46,22 +29,23 @@ In 2012, Juspay built the SDK that let Indians auto-read OTPs on mobile. In 2016
 
 That journey taught us something uncomfortable: **the platforms we build are only as good as the infrastructure they run on.** And today, that infrastructure --- for most Indian banks --- is a patchwork of ageing on-premise hardware, dollar-denominated hyperscaler contracts, and manual operations held together by institutional knowledge and hope.
 
-::: pull-quote
-\"The platforms we build are only as good as the infrastructure they run on. And India\'s banking infrastructure needs to be rebuilt --- from the ground up, for India.\"
 
---- Juspay Infrastructure Team
-:::
+
 
 Namma Cloud is our answer. It is a sovereign, full-stack cloud infrastructure platform --- built in India, for Indian banks, on Indian soil. It offers everything AWS, GCP, and Azure offer, but without the FX exposure, without the compliance risk, and without the vendor lock-in that has trapped every bank in the country.
 
 This book tells that story --- the problem, the solution, the capabilities, and the path forward.
 
-:::: {.callout .callout-note}
-::: callout-title
 📖 How to Read This Book
-:::
 
-This book is structured in four parts. **Part I** makes the case for why the status quo is no longer acceptable. **Part II** introduces Namma Cloud and the team behind it. **Part III** is a deep technical and commercial dive. **Part IV** outlines the migration journey and long-term vision. CXOs may wish to read Parts I, II, and IV first.
-::::
-:::::::
-:::::::::::::::::
+This book is structured in four parts. 
+
+**Part I** makes the case for why the status quo is no longer acceptable. 
+
+**Part II** introduces Namma Cloud and the team behind it. 
+
+**Part III** is a deep technical and commercial dive. 
+
+**Part IV** outlines the migration journey and long-term vision. 
+
+

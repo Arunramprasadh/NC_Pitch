@@ -1,9 +1,6 @@
-:::::: {#ch7 .section .chapter}
-::: chapter-num
 Chapter 7
-:::
 
-# Compliance & Sovereignty {#compliance-sovereignty .chapter-title}
+# Compliance & Sovereignty
 
 Namma Cloud is the only full-stack cloud infrastructure that is natively built for Indian banking compliance --- not retrofitted, not partially compliant, not \"working with regulators.\" Compliant by architecture.
 
@@ -24,13 +21,9 @@ One of the most common --- and most dangerous --- security anti-patterns in clou
 
 Namma Cloud uses **OpenBao** (an open-source, auditable fork of HashiCorp Vault) combined with **IMDS (Instance Metadata Service)** for secure VM secret access. No credentials ever touch disk. Secrets are fetched at runtime via instance identity, with full audit trails.
 
-:::: {.callout .callout-note}
-::: callout-title
 🔐 How It Works
-:::
 
 A VM that needs a database password does not have the password in its config file. Instead, it presents its IMDS-provided identity token to OpenBao, which validates the identity and returns the secret --- temporarily, with an expiry. The secret is never stored. The identity is unforgeable. The audit trail is complete.
-::::
 
 ## Zero Touch Provisioning
 
@@ -49,4 +42,3 @@ New servers in Namma Cloud go from physical delivery to production-ready without
 ## The Air-Gap Option
 
 For banks that require complete network isolation for their most sensitive workloads --- core banking, RTGS, NEFT infrastructure --- Namma Cloud supports fully air-gapped cluster operation. No mandatory internet dependency. No telemetry leaving the premises. Full operational capability in an isolated environment.
-::::::

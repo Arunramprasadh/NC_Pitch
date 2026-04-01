@@ -1,9 +1,6 @@
-:::::::::::::::::::::::: {#ch8 .section .chapter}
-::: chapter-num
 Chapter 8
-:::
 
-# Cost Economics {#cost-economics .chapter-title}
+# Cost Economics
 
 The business case for Namma Cloud is not just regulatory compliance. It is a dramatically better cost structure --- with better performance, better visibility, and no FX risk.
 
@@ -15,73 +12,37 @@ When you add up all of these, the cost of running critical banking workloads on 
 
 ### Illustrative Cost Index (Current Hyperscaler = 100)
 
-::::::::::::::: cost-bars
-:::::: cost-bar-row
-::: cost-bar-label
 AWS / GCP Today Index: 100
-:::
 
-:::: cost-bar-track
-::: {.cost-bar-fill .bar-aws}
 Baseline --- dollar-denominated, FX-exposed, compliance non-trivial
-:::
-::::
-::::::
 
-:::::: cost-bar-row
-::: cost-bar-label
 Namma Cloud --- Year 1 Index: \~55
-:::
 
-:::: cost-bar-track
-::: {.cost-bar-fill .bar-nc1}
 \~45% lower TCO from year one
-:::
-::::
-::::::
 
-:::::: cost-bar-row
-::: cost-bar-label
 Namma Cloud --- Year 3 Index: \~35
-:::
 
-:::: cost-bar-track
-::: {.cost-bar-fill .bar-nc3}
 \~65% lower TCO at steady state
-:::
-::::
-::::::
-:::::::::::::::
 
 *Illustrative cost index. Actual savings depend on workload profile, current infrastructure, and migration scope.*
 
 ## Where the Savings Come From
 
-::::::: {.cards .cards-2}
-::: card
 ### 💱 No FX Risk
 
 INR-denominated pricing. No exposure to dollar fluctuations. No global tariff-driven cost increases. Your infrastructure budget is predictable.
-:::
 
-::: {.card .accent-navy}
 ### 🗄️ Namma DB Tiering
 
 Databases split across SSD → HDD → Tape based on access frequency. Storage costs drop 60--80% versus managed cloud databases without any performance impact on hot data.
-:::
 
-::: {.card .accent-gold}
 ### 🔍 Styrofoam Savings
 
 Daily wastage detection and ML-based right-sizing recommendations reduce infrastructure spend by 20--40%. Most banks provision for peak and forget.
-:::
 
-::: {.card .accent-green}
 ### 📦 Included Services
 
 Monitoring, CI/CD, secrets management, networking, load balancing --- all included. No per-feature surcharges. No egress fees between zones.
-:::
-:::::::
 
 ## Namma DB Tiering: The Storage Revolution
 
@@ -101,11 +62,6 @@ Namma DB splits data across three storage tiers based on access patterns:
                             Legal hold, SEBI/RBI archive requirements
                             Seconds retrieval, 1/20th the cost
 
-:::: {.callout .callout-key}
-::: callout-title
 💡 The Economics
-:::
 
 A bank storing 100TB of historical transaction data on managed RDS today pays approximately ₹2--3 Cr/month. The same data on Namma DB tiering costs ₹25--40L/month --- a 75--85% reduction --- with identical compliance and retrieval SLAs.
-::::
-::::::::::::::::::::::::

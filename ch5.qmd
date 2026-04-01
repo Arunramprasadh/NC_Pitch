@@ -1,9 +1,6 @@
-:::::::::::::::::::::::::::::::::::: {#ch5 .section .chapter}
-::: chapter-num
 Chapter 5
-:::
 
-# Core Capabilities {#core-capabilities .chapter-title}
+# Core Capabilities
 
 Five purpose-built components form the heart of Namma Cloud. Each solves a distinct problem that banks face today. Together, they form a complete infrastructure operating system.
 
@@ -13,31 +10,21 @@ InfraSwitch is the central nervous system of Namma Cloud. Every infrastructure c
 
 Built in Haskell with 722 source files, InfraSwitch manages **142+ automated infrastructure workflows** across Kubernetes, OpenStack, AWS (for hybrid setups), and GCP. It replaces the 10+ tools most banks use today with a single, unified command centre.
 
-::::::: {.cards .cards-2}
-::: card
 ### 🎛️ Unified Dashboard
 
 Single pane of glass for cluster setup, Kubernetes management, OpenStack operations, scaling, and configuration across all data centres.
-:::
 
-::: {.card .accent-navy}
 ### 🔄 Zero-Downtime Releases
 
 Blue-green deployments with automated A/B testing and staggered rollouts. Every change is monitored, with automatic rollback on anomaly detection.
-:::
 
-::: {.card .accent-gold}
 ### 🔒 Four-Dimensional RBAC
 
 Role × Workflow × Resource Pattern × Cloud Provider --- fine-grained access control with full audit trails for every infrastructure change.
-:::
 
-::: {.card .accent-green}
 ### 🛡️ Crash-Safe by Design
 
 Persistent poll-driven state machine. If a process dies mid-execution, the system resumes from the last checkpoint. At-least-once execution, always.
-:::
-:::::::
 
 ### How InfraSwitch Works
 
@@ -63,55 +50,23 @@ Namma DSL is a Domain Specific Language built in Rust for declaring and managing
 
 This is not Infrastructure as Code in the Terraform sense. This is Infrastructure as Type-Safe Code --- where the compiler enforces correctness before anything touches production. A misconfigured cable type, a rack capacity violation, an invalid CPU configuration --- all caught at compile time.
 
-:::::::::::::::::: layer-stack
-::::::: {.layer .layer-0}
-::: layer-badge
 Layer 0
-:::
 
-::::: layer-content
-::: layer-name
 Physical (Metal)
-:::
 
-::: layer-items
 Dell R740/R750, HPE DL385 servers · Arista 7050X3, Mellanox SN2700 switches · 42U racks with power budgets
-:::
-:::::
-:::::::
 
-::::::: {.layer .layer-1}
-::: layer-badge
 Layer 1
-:::
 
-::::: layer-content
-::: layer-name
 Operating System / Hosts
-:::
 
-::: layer-items
 Ubuntu / RHEL / Arista / SONiC · Network interface configuration · Zero-touch provisioning via MAAS / Redfish
-:::
-:::::
-:::::::
 
-::::::: {.layer .layer-2}
-::: layer-badge
 Layer 2
-:::
 
-::::: layer-content
-::: layer-name
 Services
-:::
 
-::: layer-items
 OpenStack control plane / compute · Ceph storage clusters · Kubernetes nodes · BGP routing (FRR)
-:::
-:::::
-:::::::
-::::::::::::::::::
 
 ### The Namma DSL Workflow
 
@@ -138,13 +93,9 @@ OpenStack control plane / compute · Ceph storage clusters · Kubernetes nodes �
     -- Step 4: InfraSwitch executes the plan
     -- Step 5: Observe and track reconciliation
 
-:::: {.callout .callout-key}
-::: callout-title
 ✅ Type Safety in Practice
-:::
 
 If you try to connect an `RJ45Port` to an `Sfp28Cage`, the code won\'t compile. If you try to fill a 42U rack beyond its power budget, the code won\'t compile. If you try to deploy a routable network node without a configured host, the code won\'t compile. Every constraint in your datacenter design is enforced before a single command is run.
-::::
 
 ------------------------------------------------------------------------
 
@@ -152,25 +103,17 @@ If you try to connect an `RJ45Port` to an `Sfp28Cage`, the code won\'t compile. 
 
 Autopilot automates the riskiest moment in any software operation: the release. Using blue-green deployments, staggered rollouts, and integrated A/B testing, Autopilot makes every code change a non-event --- even for critical payment services.
 
-:::::: {.cards .cards-3}
-::: card
 ### 🟦🟩 Blue-Green Deployments
 
 Two identical environments. New version deployed to green while blue serves live traffic. Instant cutover. Instant rollback.
-:::
 
-::: {.card .accent-navy}
 ### 📊 A/B Statistical Testing
 
 Every release is monitored with binomial, Poisson, and t-test statistical engines. Releases that degrade metrics are automatically aborted before reaching full traffic.
-:::
 
-::: {.card .accent-green}
 ### 🎯 Staggered Rollouts
 
 5% → 25% → 50% → 100%. Each stage monitored. Automated continue / warn / abort decisions. No human needed in the critical path.
-:::
-::::::
 
 ------------------------------------------------------------------------
 
@@ -178,31 +121,21 @@ Every release is monitored with binomial, Poisson, and t-test statistical engine
 
 Styrofoam is Namma Cloud\'s predictive capacity planning and cost optimisation engine. It does what every bank wishes its cloud billing dashboard did: tell you in advance what you\'ll need, and tell you right now what you\'re wasting.
 
-::::::: {.cards .cards-2}
-::: card
 ### 📈 Predictive Scaling
 
 Uses time-series decomposition (trend + seasonality + residual) to forecast transaction patterns. Scales infrastructure before the load arrives, not after.
-:::
 
-::: {.card .accent-gold}
 ### 🗑️ Wastage Detection
 
 Runs daily. Compares provisioned vs actual usage across EC2, RDS, ElastiCache, and bare metal. Flags over-provisioning with actionable right-sizing recommendations.
-:::
 
-::: {.card .accent-navy}
 ### 💳 Cost Calculator
 
 Multi-cloud pricing engine supporting EC2, EBS, RDS, ElastiCache, Load Balancers, NAT Gateways. Compare AWS vs GCP vs Namma Cloud per workload.
-:::
 
-::: {.card .accent-green}
 ### 🎯 ML Recommendations
 
 Statistical analysis of p50/p95/p99 metrics with confidence scores. Detects growth trends. Recommends optimal resource sizes with safety headroom.
-:::
-:::::::
 
 ------------------------------------------------------------------------
 
@@ -216,4 +149,3 @@ Every layer of Namma Cloud --- from bare metal CPU utilisation to UPI transactio
 -   **Automated RCA** --- Graph-based root cause analysis with temporal causality. When an alert fires, the dashboard of the most anomalous metrics is automatically generated and posted to your Slack.
 -   **Mobile Alerts (Jusping)** --- Firebase push notifications, critical alert sounds, per-alert mute/acknowledge. Your on-call engineer knows about issues before customers do.
 -   **Namma DB Tiering** --- Database storage tiered across SSD → HDD → Tape, with automated data promotion/demotion based on access patterns.
-::::::::::::::::::::::::::::::::::::

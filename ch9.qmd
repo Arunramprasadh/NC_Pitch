@@ -1,9 +1,6 @@
-::::::::::::::::::::::::::::::::::::::::::: {#ch9 .section .chapter}
-::: chapter-num
 Chapter 9
-:::
 
-# Integrated Banking Products {#integrated-banking-products .chapter-title}
+# Integrated Banking Products
 
 Every Juspay banking product runs natively on Namma Cloud. For banks that use Juspay products, this means zero integration work and immediate access to a unified infrastructure and application layer.
 
@@ -11,139 +8,60 @@ Every Juspay banking product runs natively on Namma Cloud. For banks that use Ju
 
 Juspay has spent over a decade building the individual products that power Indian banking. Namma Cloud is the platform that unifies them --- the infrastructure layer beneath every product, pre-configured, pre-certified, and ready to run.
 
-::::::::::::::::::::::::::::::::::::::: product-grid
-:::::: product-card
-::::: product-card-top
-::: product-name
 UPI Issuer Switch
-:::
 
-::: live-badge
 LIVE
-:::
-:::::
 
 Full UPI stack --- onboarding, P2P/P2M payments, UPI Lite, Autopay, credit on UPI. Cloud-native, 0% technical declines.
-::::::
 
-:::::: product-card
-::::: product-card-top
-::: product-name
 UPI Consumer Stack
-:::
 
-::: live-badge
 LIVE
-:::
-:::::
 
 In-app UPI with 90%+ conversion rates. No app-switch flows. Cache-based architecture at 10,000+ TPS.
-::::::
 
-:::::: product-card
-::::: product-card-top
-::: product-name
 UPI Acquiring
-:::
 
-::: live-badge
 LIVE
-:::
-:::::
 
 Merchant onboarding, offline/online acquisition, QR codes, analytics, reconciliation across all channels.
-::::::
 
-:::::: product-card
-::::: product-card-top
-::: product-name
 White Label Cards PG
-:::
 
-::: live-badge
 LIVE
-:::
-:::::
 
 Acquiring + issuing, ACS, tokenization (150Mn+ tokens), 3DS 2.0, smart routing, dispute management.
-::::::
 
-:::::: product-card
-::::: product-card-top
-::: product-name
 IBMB (Netbanking 2.0)
-:::
 
-::: live-badge
 LIVE
-:::
-:::::
 
 Intent + QR flows via NBBL switch. Replaces legacy redirection-based netbanking with secure, low-dropout flows.
-::::::
 
-:::::: product-card
-::::: product-card-top
-::: product-name
 FASTag
-:::
 
-::: live-badge
 LIVE
-:::
-:::::
 
 Complete FASTag issuing + acquiring stack for highway toll collections and mobility payments.
-::::::
 
-:::::: product-card
-::::: product-card-top
-::: product-name
 JusTrust (Fraud)
-:::
 
-::: live-badge
 LIVE
-:::
-:::::
 
 Real-time fraud intelligence with Smart Registry, money flow tracking, mule account detection, and ML risk scoring.
-::::::
 
-:::::: product-card
-::::: product-card-top
-::: product-name
 Payment Orchestration
-:::
 
-::: live-badge
 LIVE
-:::
-:::::
 
 Smart routing, tokenization, payins/payouts, white-label checkout, analytics --- across all payment methods and networks.
-::::::
 
-:::::: product-card
-::::: product-card-top
-::: product-name
 LMS Credit Line
-:::
 
-::: live-badge
 LIVE
-:::
-:::::
 
 Digital lending platform with AI-native collection suite, credit on UPI issuance and acquiring support.
-::::::
-:::::::::::::::::::::::::::::::::::::::
 
-:::: {.callout .callout-note}
-::: callout-title
 🔌 Zero Integration Overhead
-:::
 
 When your bank runs on Namma Cloud, every Juspay product is pre-wired into the infrastructure. No API integration projects. No network configuration. No security review for each product. One infrastructure onboarding unlocks the entire Juspay product catalogue.
-::::
-:::::::::::::::::::::::::::::::::::::::::::

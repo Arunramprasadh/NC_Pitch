@@ -3,3 +3,5 @@
 /.quarto-publish/
 tmp_*.html
 *.pdf
+
+**/*.quarto_ipynb

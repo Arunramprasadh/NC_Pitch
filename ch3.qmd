@@ -1,9 +1,6 @@
-:::::::::::::::::::::::::::::::::::: {#ch3 .section .chapter}
-::: chapter-num
 Chapter 3
-:::
 
-# Why Juspay {#why-juspay .chapter-title}
+# Why Juspay
 
 Building a cloud for banks requires two things most infrastructure companies don\'t have: deep banking domain knowledge and battle-tested reliability at national scale. Juspay has both.
 
@@ -11,113 +8,53 @@ Building a cloud for banks requires two things most infrastructure companies don
 
 Juspay did not enter the payments space as a gateway or aggregator. We entered as infrastructure builders. Our work sits beneath the apps, beneath the banks, at the layer where reliability is not a feature --- it is the product.
 
-::::::::::::::::::::::::::: timeline
-:::::: tl-item
-::: tl-dot
 2012
-:::
 
-:::: tl-body
-::: tl-title
 India\'s First OTP Auto-Read SDK
-:::
 
 Juspay Safe SDK --- the first SDK to auto-read OTPs for mobile payments, reducing friction for 300 million mobile banking users.
-::::
-::::::
 
-:::::: tl-item
-::: tl-dot
 2016
-:::
 
-:::: tl-body
-::: tl-title
 Built BHIM and the Core UPI Library
-:::
 
 Designed and built the BHIM app and the core UPI 2FA SDK --- the foundation of India\'s real-time payments revolution.
-::::
-::::::
 
-:::::: tl-item
-::: tl-dot
 2017
-:::
 
-:::: tl-body
-::: tl-title
 First In-App UPI Experience
-:::
 
 UPI TPAP SDK --- the first solution to bring a seamless in-app UPI experience, eliminating app-switching dropouts.
-::::
-::::::
 
-:::::: tl-item
-::: tl-dot
 2020
-:::
 
-:::: tl-body
-::: tl-title
 India\'s First UPI PSP on Cloud
-:::
 
 Built the first cloud-native UPI PSP for banks, delivering better performance and reliability than legacy on-premise deployments.
-::::
-::::::
 
-:::::: tl-item
-::: tl-dot
 2021
-:::
 
-:::: tl-body
-::: tl-title
 Designed UPI Lite
-:::
 
 Designed and developed small-value payments without UPI PIN --- extending the reach of digital payments to India\'s next 500 million.
-::::
-::::::
 
-:::::: tl-item
-::: tl-dot
 2023
-:::
 
-:::: tl-body
-::: tl-title
 UPI Plug-in SDK for 1-Click Payments
-:::
 
 The UPI Plug-in SDK powers instant, in-context payments for 400+ merchants --- without any effort from the bank or merchant.
-::::
-::::::
-:::::::::::::::::::::::::::
 
 ## Scale That Demands Infrastructure Mastery
 
 Juspay does not operate at startup scale. We operate at national infrastructure scale. The demands of processing \$1 trillion in annualised transaction value --- reliably, at millisecond latency, with zero technical declines --- forced us to build infrastructure capability that no third-party cloud could deliver.
 
-::::::: stats-row
-::: stat-block
-[\$1 Tn+]{.big} [Annualised Transaction Value]{.small}
-:::
+\$1 Tn+ Annualised Transaction Value
 
-::: stat-block
-[300 Mn+]{.big} [Transactions Processed Daily]{.small}
-:::
+300 Mn+ Transactions Processed Daily
 
-::: stat-block
-[2.5 Bn+]{.big} [SDK Installs Globally]{.small}
-:::
+2.5 Bn+ SDK Installs Globally
 
-::: stat-block
-[500+]{.big} [Enterprise Banks & Merchants]{.small}
-:::
-:::::::
+500+ Enterprise Banks & Merchants
 
 ## We Know What You Don\'t Know You Need
 
@@ -125,11 +62,6 @@ A traditional cloud provider builds infrastructure for generic workloads. Juspay
 
 Our infrastructure was not designed in a lab. It was designed under fire --- 300 million transactions a day, with a bank\'s reputation on the line for each one.
 
-:::: {.callout .callout-key}
-::: callout-title
 ✅ The Juspay Advantage
-:::
 
 We are the only cloud provider that has operated at the intersection of Indian banking, NPCI infrastructure, and cloud-native engineering at national scale. Namma Cloud is not a product we built for banks --- it is the infrastructure we built to survive building for banks.
-::::
-::::::::::::::::::::::::::::::::::::
