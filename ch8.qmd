@@ -12,17 +12,18 @@ When you add up all of these, the cost of running critical banking workloads on 
 
 ### Illustrative Cost Index (Current Hyperscaler = 100)
 
-AWS / GCP Today Index: 100
+![Illustrative Cost Index](cost_comparison.png)
 
+**AWS / GCP Today Index: 100**
 Baseline --- dollar-denominated, FX-exposed, compliance non-trivial
 
-Namma Cloud --- Year 1 Index: \~55
+**Namma Cloud --- Year 1 Index: ~55**
+~45% lower TCO from year one
 
-\~45% lower TCO from year one
+**Namma Cloud --- Year 2 Index: ~35**
+~65% lower TCO at steady state
 
-Namma Cloud --- Year 3 Index: \~35
 
-\~65% lower TCO at steady state
 
 *Illustrative cost index. Actual savings depend on workload profile, current infrastructure, and migration scope.*
 

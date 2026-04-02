@@ -5,19 +5,19 @@ A Pitch for India\'s Banking Future
 India\'s sovereign, full-stack cloud infrastructure platform --- built exclusively for banks, compliant by design, and powered by the team that built India\'s payments.
 
 
-- [\$1 Tn+]
+- \$1 Tn+
 
 
-- [300 Mn+]
+- 300 Mn+
 
 
-- [99.999%]
+- 99.999%
 
 
-- [10,000+] 
+- 10,000+
 
 
-- [0%] [Technical Declines]
+- 0% Technical Declines
 
 
 
